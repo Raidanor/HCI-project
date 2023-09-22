@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Raidanor/HCI-project/static/css/main.073c9b0a.css",
+    "main.js": "/Raidanor/HCI-project/static/js/main.a42a9aa4.js",
+    "static/js/787.17e7ea75.chunk.js": "/Raidanor/HCI-project/static/js/787.17e7ea75.chunk.js",
+    "static/media/logo.svg": "/Raidanor/HCI-project/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Raidanor/HCI-project/index.html",
+    "main.073c9b0a.css.map": "/Raidanor/HCI-project/static/css/main.073c9b0a.css.map",
+    "main.a42a9aa4.js.map": "/Raidanor/HCI-project/static/js/main.a42a9aa4.js.map",
+    "787.17e7ea75.chunk.js.map": "/Raidanor/HCI-project/static/js/787.17e7ea75.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.a42a9aa4.js"
+  ]
+}
