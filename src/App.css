@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.bg-custom
+{
+    background-image: url('assets/image1.jpg');
+    background-size: cover;
+}
