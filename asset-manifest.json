@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/Raidanor/HCI-project/static/css/main.073c9b0a.css",
-    "main.js": "/Raidanor/HCI-project/static/js/main.a42a9aa4.js",
+    "main.css": "/Raidanor/HCI-project/static/css/main.584dc231.css",
+    "main.js": "/Raidanor/HCI-project/static/js/main.ad4f3ff7.js",
     "static/js/787.17e7ea75.chunk.js": "/Raidanor/HCI-project/static/js/787.17e7ea75.chunk.js",
+    "static/media/image1.jpg": "/Raidanor/HCI-project/static/media/image1.811831375d551ad2364c.jpg",
     "static/media/logo.svg": "/Raidanor/HCI-project/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Raidanor/HCI-project/index.html",
-    "main.073c9b0a.css.map": "/Raidanor/HCI-project/static/css/main.073c9b0a.css.map",
-    "main.a42a9aa4.js.map": "/Raidanor/HCI-project/static/js/main.a42a9aa4.js.map",
+    "main.584dc231.css.map": "/Raidanor/HCI-project/static/css/main.584dc231.css.map",
+    "main.ad4f3ff7.js.map": "/Raidanor/HCI-project/static/js/main.ad4f3ff7.js.map",
     "787.17e7ea75.chunk.js.map": "/Raidanor/HCI-project/static/js/787.17e7ea75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.a42a9aa4.js"
+    "static/css/main.584dc231.css",
+    "static/js/main.ad4f3ff7.js"
   ]
 }
