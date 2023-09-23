@@ -1,6 +1,6 @@
 {
-    "homepage": "http://Raidanor.github.io/",
-    "name": "hci-project",
+    "homepage": "http://Raidanor.github.io/HCI-project",
+    "name": "hci",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

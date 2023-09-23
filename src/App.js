@@ -5,7 +5,7 @@ import Navbar from './components/Navbar.js'
 
 function App() {
   return (
-    <div class="container-fluid bg-custom">
+    <div>
         <Navbar />
         <div class="container-fluid bg-custom">
             
