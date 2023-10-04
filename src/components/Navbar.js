@@ -1,3 +1,5 @@
+import logo from "../assets/2B_icon.png";
+
 function Navbar()
 {
     return(
@@ -7,6 +9,7 @@ function Navbar()
                 {/* <!-- Container wrapper --> */}
                 <div class="container">
                     {/* <!-- Navbar brand --> */}
+                    <img src={logo} alt="logo" style={{ width: '40px', }} />
                     <a class="navbar-brand me-2" href="https://mdbgo.com/">
                     HCI
                     </a>
