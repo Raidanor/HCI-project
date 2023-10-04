@@ -7,8 +7,7 @@ function App() {
   return (
     <div>
         <Navbar />
-        <Navbar />
-        <Navbar />
+        
         
         <div class="container-fluid bg-custom">
             
