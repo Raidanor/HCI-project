@@ -1,21 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from "react";
 import './App.css';
-import Navbar from './components/Navbar.js';
-import Login from './Login';
-import Signup from './Signup';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import Secert  from "./pages/Secert";
+
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/Register" element={<Register/>}/>
+        <Route exact path="/Login" element={<Login/>}/>
+        <Route exact path="/" element={<Secert/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
