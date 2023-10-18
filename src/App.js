@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import Navbar from './components/Navbar.js'
-import CalendarComponenent from './components/CalendarComponent.js'
+import CalendarComponent from './components/CalendarComponent.js'
 
 
 function App() {
   return (
     <div>
         <Navbar />
-        <CalendarComponenent />
+        <CalendarComponent />
         
         <div class="container-fluid bg-custom">
             
