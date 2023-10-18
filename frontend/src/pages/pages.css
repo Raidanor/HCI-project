@@ -16,7 +16,7 @@
 }}
 
 body {
-    background: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+    background: linear-gradient(79deg,#F7944D, #C66FBC 48%,#7439db  );
   }
 
 label {

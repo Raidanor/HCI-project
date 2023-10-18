@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import Secert  from "./pages/Secert";
+import "react-toastify/dist/ReactToastify.css"
 
 
 function App() {
