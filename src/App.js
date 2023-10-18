@@ -14,7 +14,6 @@ function App() {
     <div>
     <Router>
         <Navbar />
-
         <div>
             <Routes>
                 <Route exact path = "/" element = {<CalendarComponent />} />
