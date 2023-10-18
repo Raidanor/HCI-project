@@ -1,21 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 
-import Navbar from './components/Navbar.js'
+import {Profile} from './components/Profile.jsx'
+import BadgeDisplayer from './components/BadgeDisplayer.js';
 
 function App() {
   return (
     <div>
-        <Navbar />
-        <Navbar />
-        <Navbar />
-        <Navbar />
-        <Navbar />
-        
-        
+        <Profile />
+
         <div class="container-fluid bg-custom">
             
         </div>
+        
+        <div className="App">
+            <BadgeDisplayer src="Picture1.png" alt="Description" />
+        </div>
+
     </div>
   );
 }

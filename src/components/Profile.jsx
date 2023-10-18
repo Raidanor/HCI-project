@@ -1,5 +1,4 @@
-function Navbar()
-{
+export const Profile = (props) => {
     return(
         <>
             {/* <!-- Navbar --> */}
@@ -8,7 +7,7 @@ function Navbar()
                 <div class="container">
                     {/* <!-- Navbar brand --> */}
                     <a class="navbar-brand me-2" href="https://mdbgo.com/">
-                    HCI
+                    <strong>Badges Earned</strong>
                     </a>
 
                     {/* <!-- Toggle button --> */}
@@ -53,4 +52,3 @@ function Navbar()
     )
 }
 
-export default Navbar;
