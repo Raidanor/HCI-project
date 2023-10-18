@@ -6,7 +6,7 @@ import { Register } from "./Register";
 
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [currentForm, setCurrentForm] = useState('login1');
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
