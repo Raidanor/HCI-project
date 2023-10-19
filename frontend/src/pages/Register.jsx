@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import axios from 'axios';
 
 
@@ -25,7 +25,7 @@ export const Register = (props) => {
 
             // Check if the request was successful
             if (data.created) {
-                navigate("/")
+                navigate("/Login")
             }
         } catch (err) {
             if (err.response) {
@@ -55,7 +55,7 @@ export const Register = (props) => {
                 <br/>
                 <Link to="/Login">Already have an account? Login here.</Link>
             </form>
-            <ToastContainer/>
+
         </div>
     )
 }

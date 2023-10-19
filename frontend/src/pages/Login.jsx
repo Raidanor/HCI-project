@@ -56,7 +56,7 @@ export const Login = (props) => {
             <br/>
             <Link to="/Register">Don't have an account? Register here. </Link>
         </form>
-        <ToastContainer/>
+        
         </div>
     )
 }
