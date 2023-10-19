@@ -5,8 +5,11 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
-import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
+import React, { useEffect, useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
+import axios from "axios";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US")
@@ -23,29 +26,84 @@ const localizer = dateFnsLocalizer({
 const events = [
   {
     title: "Big Meeting",
-    allDay: true,
+    allDay: false, 
     start: new Date(2023, 9, 13),
     end: new Date(2023, 9, 13)
   },
   {
     title: "Vacation",
+    allDay: false, 
     start: new Date(2023, 9, 17),
     end: new Date(2023, 9, 20)
   },
   {
-    title: "Conference ",
+    title: "Conference",
+    allDay: false, // Set this to false
     start: new Date(2023, 9, 15),
     end: new Date(2023, 9, 16)
   },
 ];
 
+
 function CalendarComponent() {
+  const nav = useNavigate();
+    const [cookies, removeCookie] = useCookies([]); 
+    const logOut = () => {
+        removeCookie("jwt"); 
+        nav("/Login"); 
+    };
+
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
+
   const [allEvents, setAllEvents] = useState(events);
 
   function handleAddEvent() {
-    setAllEvents([...allEvents, newEvent]);
+    // Validate date inputs
+    if (!newEvent.title || !newEvent.start || !newEvent.end) {
+      // Handle validation error, e.g., show an error message.
+      return;
+    }
+  
+    // Convert date strings to Date objects
+    const startDate = new Date(newEvent.start);
+    const endDate = new Date(newEvent.end);
+  
+    // Create the new event object
+    const event = {
+      title: newEvent.title,
+      start: startDate,
+      end: endDate,
+    };
+  
+    // Update the events array
+    setAllEvents([...allEvents, event]);
+  
+    // Clear the input fields or set newEvent to its initial state
+    setNewEvent({ title: "", start: "", end: "" });
   }
+  
+
+  useEffect(() => {
+    const verifyUser = async () => {
+        if (!cookies.jwt) {
+            nav("/Login");
+        } else {
+            try {
+                const response = await axios.post("http://localhost:3500", {}, {
+                    withCredentials: true,
+                });
+
+                if (!response.data.status) {
+                    logOut(); // Call the logOut function to remove the cookie and navigate to the login page
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+    };
+
+    verifyUser();
+}, [cookies.jwt, nav]);
 
   return (
     <>
