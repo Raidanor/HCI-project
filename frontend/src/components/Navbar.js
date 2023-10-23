@@ -1,3 +1,6 @@
+
+import { Link } from "react-router-dom";
+
 function Navbar()
 {
     return(
@@ -29,17 +32,20 @@ function Navbar()
                     {/* <!-- Left links --> */}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <Link class="nav-link" href="#" to="/">Dashboard</Link>
+                        </li>
+                        <li class="nav-item">
+                        <Link class="nav-link" href="#" to="/">Calendar</Link>
                         </li>
                     </ul>
                     {/* <!-- Left links --> */}
 
                     <div class="d-flex align-items-center">
                         <button type="button" class="btn btn-link px-3 me-2">
-                        Login
+                            <Link to="/login">Login</Link>
                         </button>
                         <button type="button" class="btn btn-primary me-3">
-                        Sign up for free
+                            <Link class="text-white" to="/register">Sign up</Link>
                         </button>
                         
                     </div>

@@ -13,6 +13,7 @@ const createToken = (id) => {
 const handleError = (err) => {
     const errors = {};
 
+    
     if (err.message === "Incorrect Email"){
         errors.email = "That email is not registered"
     };

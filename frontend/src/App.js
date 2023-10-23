@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import { Login } from "./pages/Login";
+import Navbar from './components/Navbar.js'
 import { Register } from "./pages/Register";
 import Profile from './pages/Profile';
 import BadgePage from './pages/BadgePage';
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar />
       <ToastContainer/>
       <Routes>
         <Route exact path="/Register" element={<Register/>}/>
