@@ -1,4 +1,8 @@
-function Navbar()
+import icon from "../assets/2B_icon.png"
+
+import {Link} from "react-router-dom"
+
+function Navbar(props)
 {
     return(
         <>
@@ -7,6 +11,7 @@ function Navbar()
                 {/* <!-- Container wrapper --> */}
                 <div class="container">
                     {/* <!-- Navbar brand --> */}
+                    <img src={icon} alt="icon" style = {{width:"50px"}}/>
                     <a class="navbar-brand me-2" href="https://mdbgo.com/">
                     HCI
                     </a>
@@ -29,19 +34,19 @@ function Navbar()
                     {/* <!-- Left links --> */}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                            <button><Link to="/Profile">Profile</Link></button>
                         </li>
+                        <li class="nav-item"><button><Link to="/Profile/Calendar">Calendar</Link></button></li>
                     </ul>
                     {/* <!-- Left links --> */}
 
                     <div class="d-flex align-items-center">
                         <button type="button" class="btn btn-link px-3 me-2">
-                        Login
+                            <Link to="/login">Login</Link>
                         </button>
                         <button type="button" class="btn btn-primary me-3">
-                        Sign up for free
+                            <Link to="/register" class="text-white">Register</Link>
                         </button>
-                        
                     </div>
                     </div>
                     {/* <!-- Collapsible wrapper --> */}

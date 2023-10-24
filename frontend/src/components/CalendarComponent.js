@@ -26,29 +26,28 @@ const localizer = dateFnsLocalizer({
 const events = [
   {
     title: "Big Meeting",
-    allDay: false, 
     start: new Date(2023, 9, 13),
     end: new Date(2023, 9, 13)
   },
   {
     title: "Vacation",
-    allDay: false, 
     start: new Date(2023, 9, 17),
     end: new Date(2023, 9, 20)
   },
   {
     title: "Conference",
-    allDay: false, // Set this to false
     start: new Date(2023, 9, 15),
     end: new Date(2023, 9, 16)
   },
 ];
 
 
-function CalendarComponent() {
+function CalendarComponent()
+{
   const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
-    const logOut = () => {
+    const logOut = () =>
+    {
         removeCookie("jwt"); 
         nav("/Login"); 
     };
@@ -57,9 +56,11 @@ function CalendarComponent() {
 
   const [allEvents, setAllEvents] = useState(events);
 
-  function handleAddEvent() {
+  function handleAddEvent()
+  {
     // Validate date inputs
-    if (!newEvent.title || !newEvent.start || !newEvent.end) {
+    if (!newEvent.title || !newEvent.start || !newEvent.end)
+    {
       // Handle validation error, e.g., show an error message.
       return;
     }
@@ -69,7 +70,8 @@ function CalendarComponent() {
     const endDate = new Date(newEvent.end);
   
     // Create the new event object
-    const event = {
+    const event =
+    {
       title: newEvent.title,
       start: startDate,
       end: endDate,
@@ -77,17 +79,26 @@ function CalendarComponent() {
   
     // Update the events array
     setAllEvents([...allEvents, event]);
+    setAllEvents([...allEvents, events]);
+    
   
-    // Clear the input fields or set newEvent to its initial state
-    setNewEvent({ title: "", start: "", end: "" });
+    // // Clear the input fields or set newEvent to its initial state
+    // setNewEvent({ title: "", start: "", end: "" });
+    // setAllEvents([...allEvents, events]);
+
   }
   
 
-  useEffect(() => {
-    const verifyUser = async () => {
-        if (!cookies.jwt) {
+  useEffect(() =>
+  {
+    const verifyUser = async () =>
+    {
+        if (!cookies.jwt)
+        {
             nav("/Login");
-        } else {
+        }
+        else
+        {
             try {
                 const response = await axios.post("http://localhost:3500", {}, {
                     withCredentials: true,
@@ -103,10 +114,10 @@ function CalendarComponent() {
     };
 
     verifyUser();
-}, [cookies.jwt, nav]);
+    }, [cookies.jwt, nav]);
 
   return (
-    <>
+    <div >
       <h1>Calendar</h1>
       <h2>Add New Event</h2>
 
@@ -132,7 +143,7 @@ function CalendarComponent() {
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
 
-        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
+        <button onClick={handleAddEvent}>
           Add Event
         </button>
       </div>
@@ -143,7 +154,7 @@ function CalendarComponent() {
         endAccessor="end"
         style={{ height: 600, margin: "50px" }}
       />
-    </>
+    </div>
   );
 }
 
