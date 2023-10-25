@@ -1,0 +1,39 @@
+.private {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  .private h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .private a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  
+  .private a:hover {
+    text-decoration: underline;
+  }
+  
+  .private button {
+    background-color: #0077cc;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .private button:hover {
+    background-color: #005ea6;
+  }
+
+  .img{
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+ }
