@@ -82,9 +82,9 @@ function CalendarComponent()
     setAllEvents([...allEvents, events]);
     
   
-    // // Clear the input fields or set newEvent to its initial state
-    // setNewEvent({ title: "", start: "", end: "" });
-    // setAllEvents([...allEvents, events]);
+    // Clear the input fields or set newEvent to its initial state
+    setNewEvent({ title: "", start: "", end: "" });
+    setAllEvents([...allEvents, events]);
 
   }
   

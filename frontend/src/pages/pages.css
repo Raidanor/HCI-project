@@ -20,7 +20,6 @@
 body {
     /* background: linear-gradient(79deg,#F7944D, #C66FBC 48%,#7439db  ); */
     background-image: linear-gradient(79deg, #3964db, #C66FBC 48%, #F7944D);
-    display: flex; 
     min-height: 100vh;
     justify-content: center;
     color: white;

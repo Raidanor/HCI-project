@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import Profile from './pages/Profile';
@@ -7,7 +7,7 @@ import BadgePage from './pages/BadgePage';
 import CalendarComponent from "./components/CalendarComponent.js";
 import Navbar from "./components/Navbar.jsx";
 import Secert from "./pages/Secert";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
 import React, { useEffect, useState } from "react";
 
