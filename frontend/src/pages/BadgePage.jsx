@@ -36,9 +36,7 @@ export default function BadgePage() {
     return (
         <div className="private">
             <h1>Logged in on BadgePage!</h1>
-            <Link to="/Login">Back to Login</Link>
-            <br/>
-            <Link to="/">Back to logout button</Link>
+            
             <button onClick={logOut}>Log Out</button>
         </div>
     );
