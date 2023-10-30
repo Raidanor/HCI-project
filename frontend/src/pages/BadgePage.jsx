@@ -3,7 +3,7 @@ import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 
-import "./badge-custom.css";
+import "./myCSS.css";
 
 import Picture1 from "../assets/Picture1.png";
 import Picture2 from "../assets/Picture2.png";

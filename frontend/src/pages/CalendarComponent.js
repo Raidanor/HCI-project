@@ -107,36 +107,45 @@ function CalendarComponent() {
 
   return (
     <>
-      <h1>Calendar</h1>
-      <h2>Add New Event</h2>
+        <div class = "container">
+        <div class="row center"><h1 class="mx-auto">Calendar</h1></div>
+        <div class="row"><h2 class="mx-auto">Add New Event</h2></div>
 
-      <div>
-        <input
-          type="text"
-          placeholder="Add Title"
-          style={{ width: "20%", marginRight: "10px" }}
-          value={newEvent.title}
-          onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-        />
+        <div class="row">
+            <input
+            type="text"
+            placeholder="Add Title"
+            value={newEvent.title}
+            onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+            class="w-25 mx-auto"
+            />
+        </div>
+        <div class="row ">
+            <div class="col-6">
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            class="justify-content-end"
+            />
+            </div>
 
-        <DatePicker
-          placeholderText="Start Date"
-          style={{ marginRight: "10px" }}
-          selected={newEvent.start}
-          onChange={(start) => setNewEvent({ ...newEvent, start })}
-        />
+            <div class="col-6">
+            <DatePicker
+            placeholderText="End Date"
+            selected={newEvent.end}
+            onChange={(end) => setNewEvent({ ...newEvent, end })}
+            />
+            </div>
+        </div>
+        <div class="row">
+            <button onClick={handleAddEvent} class="w-50 mx-auto">
+            Add Event
+            </button>
+        </div>
+        </div>
 
-        <DatePicker
-          placeholderText="End Date"
-          selected={newEvent.end}
-          onChange={(end) => setNewEvent({ ...newEvent, end })}
-        />
-
-        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
-          Add Event
-        </button>
-      </div>
-      <Calendar
+        <Calendar
         localizer={localizer}
         events={allEvents}
         startAccessor="start"

@@ -1,0 +1,30 @@
+.grey
+{
+    filter: grayscale(100%);
+}
+
+.bordering
+{
+    border: 10px solid #ffe600;
+}
+
+.centers {
+    margin: auto;
+}
+
+.leftbox
+{
+    margin: 20px;
+}
+
+.rightbox
+{
+    padding-left:10px;
+}
+
+.addevent
+{
+    margin: 0%;
+    width: 50%;
+    padding: 10px;
+}
