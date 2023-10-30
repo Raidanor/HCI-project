@@ -4,8 +4,9 @@ import "./pages.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios';
 
-export const Login = (props) => {
-    const navigate = useNavigate()
+export const Login = (props) =>
+{
+    const navigate = useNavigate();
 
     const [values, setValues] = useState({
         email: "",
