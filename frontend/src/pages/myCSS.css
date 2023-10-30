@@ -30,9 +30,9 @@
     padding: 10px;
 }
 
-img:hover
+.border-glowing
 {
--moz-box-shadow: 0 0 5px 5px #ddd;
--webkit-box-shadow: 0 0 5px 5px #ddd;
-box-shadow: 0 0 5px 5px #ddd;
+-moz-box-shadow: 0 0 5px 5px #ffee00;
+-webkit-box-shadow: 0 0 5px 5px #ffee00;
+box-shadow: 0 0 10px 10px #ffee00;
 }

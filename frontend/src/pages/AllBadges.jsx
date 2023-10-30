@@ -50,9 +50,10 @@ export default function AllBadges() {
                     <img src = {Picture1} alt="Badge1" />
                 </div>
                 <div class="col-4">
-                    <img src = {Picture1} alt="Badge1" class="" />
+                    <img src = {Picture1} alt="Badge1" class="rounded-circle border-glowing" />
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="col-4">
                     <img src = {Picture2} alt="Badge2" class="grey" />
@@ -61,9 +62,10 @@ export default function AllBadges() {
                     <img src = {Picture2} alt="Badge2" />
                 </div>
                 <div class="col-4">
-                    <img src = {Picture2} alt="Badge2" />
+                    <img src = {Picture2} alt="Badge2" class="rounded-circle border-glowing" />
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="col-4">
                     <img src = {Picture3} alt="Badge3" class="grey" />
@@ -72,7 +74,7 @@ export default function AllBadges() {
                     <img src = {Picture3} alt="Badge3" />
                 </div>
                 <div class="col-4">
-                    <img src = {Picture3} alt="Badge3" />
+                    <img src = {Picture3} alt="Badge3" class="rounded-circle border-glowing" />
                 </div>
             </div>
             
