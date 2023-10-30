@@ -12,8 +12,8 @@ import React, { useEffect, useState } from "react";
 
 
 
-function App() {
-
+function App()
+{
   return (
     <BrowserRouter>
       <ToastContainer/>

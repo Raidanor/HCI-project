@@ -4,22 +4,26 @@ import "./pages.css";
 import { ToastContainer, toast } from "react-toastify";
 import axios from 'axios';
 
-export const Login = (props) => {
+export const Login = (props) => 
+{
     const navigate = useNavigate()
 
-    const [values, setValues] = useState({
+    const [values, setValues] = useState
+    ({
         email: "",
         password: "",
     });
 
-    const generateError = (err) => toast.error(err, {
+    const generateError = (err) => toast.error(err,
+    {
         position: "bottom-right",
     });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.post("http://localhost:3500/login", values, {
+            const { data } = await axios.post("http://localhost:3500/login", values,
+            {
                 withCredentials: true,
             });
 
@@ -31,8 +35,10 @@ export const Login = (props) => {
             if (err.response) {
                 // AxiosError with response data
                 const { data } = err.response;
-                if (data.errors) {
-                    for (const key in data.errors) {
+                if (data.errors)
+                {
+                    for (const key in data.errors)
+                    {
                         generateError(data.errors[key]);
                     }
                 }

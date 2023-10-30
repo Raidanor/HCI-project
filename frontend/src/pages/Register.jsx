@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 import axios from 'axios';
 
 
-export const Register = (props) => {
+export const Register = (props) =>
+{
     const navigate = useNavigate()
 
     const [values, setValues] = useState({

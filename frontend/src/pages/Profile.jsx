@@ -4,7 +4,8 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import profile_icon from '../assets/astronaut.png'
 
-export default function Profile() {
+export default function Profile()
+{
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
     const logOut = () => {
@@ -18,11 +19,13 @@ export default function Profile() {
                 nav("/Login");
             } else {
                 try {
-                    const response = await axios.post("http://localhost:3500", {}, {
+                    const response = await axios.post("http://localhost:3500", {},
+                    {
                         withCredentials: true,
                     });
 
-                    if (!response.data.status) {
+                    if (!response.data.status)
+                    {
                         logOut(); // Call the logOut function to remove the cookie and navigate to the login page
                     }
                 } catch (error) {

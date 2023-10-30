@@ -3,10 +3,12 @@ import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 
-export default function BadgePage() {
+export default function BadgePage()
+{
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
-    const logOut = () => {
+    const logOut = () =>
+    {
         removeCookie("jwt"); 
         nav("/Login"); 
     };
@@ -16,12 +18,14 @@ export default function BadgePage() {
             if (!cookies.jwt) {
                 nav("/Login");
             } else {
-                try {
+                try
+                {
                     const response = await axios.post("http://localhost:3500", {}, {
                         withCredentials: true,
                     });
 
-                    if (!response.data.status) {
+                    if (!response.data.status)
+                    {
                         logOut(); // Call the logOut function to remove the cookie and navigate to the login page
                     }
                 } catch (error) {

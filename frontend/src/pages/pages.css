@@ -1,15 +1,15 @@
-
-
-
-.auth-form-container, .login-form, .register-form {
+.auth-form-container, .login-form, .register-form
+{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px)
+{
     
-.auth-form-container {
+.auth-form-container
+{
     padding: 5rem;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
@@ -27,19 +27,22 @@ body {
     color: white;
   }
 
-label {
+label
+{
     text-align: left;
     padding: 0.25rem 0;
 }
 
-input {
+input
+{
     margin: 0.5rem 0;
     padding: 1rem;
     border: none;
     border-radius: 10px;
 }
 
-button {
+button
+{
     border: none;
     background-color: rgb(251, 251, 251);
     padding: 20px;
@@ -47,13 +50,15 @@ button {
     cursor: pointer; 
 }
 
-.link-btn{
+.link-btn
+{
     background: none;
     color: rgb(248, 248, 248);
     text-decoration: underline;
 }
 
-.button:hover {
+.button:hover
+{
     /* background-color: rgb(199, 20, 20); */
     background-color: rgb(194, 191, 191);
 }
