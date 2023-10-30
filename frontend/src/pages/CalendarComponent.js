@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -6,13 +7,12 @@ import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
-import React, { useEffect, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 
 const locales = {
-  "en-US": require("date-fns/locale/en-US")
+  "en-US": require("date-fns/locale/en-US"),
 };
 
 const localizer = dateFnsLocalizer({
@@ -20,96 +20,73 @@ const localizer = dateFnsLocalizer({
   parse,
   startOfWeek,
   getDay,
-  locales
+  locales,
 });
 
-const events = [
-  {
-    title: "Big Meeting",
-    allDay: false, 
-    start: new Date(2023, 9, 13),
-    end: new Date(2023, 9, 13)
-  },
-  {
-    title: "Vacation",
-    allDay: false, 
-    start: new Date(2023, 9, 17),
-    end: new Date(2023, 9, 20)
-  },
-  {
-    title: "Conference",
-    allDay: false, // Set this to false
-    start: new Date(2023, 9, 15),
-    end: new Date(2023, 9, 16)
-  },
-];
-
-
 function CalendarComponent() {
-  const nav = useNavigate();
-    const [cookies, removeCookie] = useCookies([]); 
-    const logOut = () => {
-        removeCookie("jwt"); 
-        nav("/Login"); 
-    };
-
+  const navigate = useNavigate();
+  const [cookies] = useCookies(['jwt']);
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-
-  const [allEvents, setAllEvents] = useState(events);
+  const [allEvents, setAllEvents] = useState([]);
 
   function handleAddEvent() {
-    // Validate date inputs
     if (!newEvent.title || !newEvent.start || !newEvent.end) {
       // Handle validation error, e.g., show an error message.
       return;
     }
-  
-    // Convert date strings to Date objects
+
     const startDate = new Date(newEvent.start);
     const endDate = new Date(newEvent.end);
-  
-    // Create the new event object
+
     const event = {
       title: newEvent.title,
       start: startDate,
       end: endDate,
     };
-  
-    // Update the events array
-    setAllEvents([...allEvents, event]);
-  
-    // Clear the input fields or set newEvent to its initial state
-    setNewEvent({ title: "", start: "", end: "" });
+
+    axios.post('http://localhost:3500/events', event, {
+      headers: {
+        Authorization: `Bearer ${cookies.jwt}`,
+      },
+    })
+    .then((response) => {
+      setAllEvents([...allEvents, response.data]);
+      setNewEvent({ title: "", start: "", end: "" });
+    })
+    .catch((error) => {
+      console.error('Could not save the event:', error);
+    });
   }
-  
 
   useEffect(() => {
-    const verifyUser = async () => {
-        if (!cookies.jwt) {
-            nav("/Login");
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('http://localhost:3500/events', {
+          headers: {
+            Authorization: `Bearer ${cookies.jwt}`,
+          },
+        });
+        setAllEvents(response.data);
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          navigate("/Login");
         } else {
-            try {
-                const response = await axios.post("http://localhost:3500", {}, {
-                    withCredentials: true,
-                });
-
-                if (!response.data.status) {
-                    logOut(); // Call the logOut function to remove the cookie and navigate to the login page
-                }
-            } catch (error) {
-                console.error("Error:", error);
-            }
+          console.error("Could not fetch events:", error);
         }
+      }
     };
-
-    verifyUser();
-}, [cookies.jwt, nav]);
+  
+    if (cookies.jwt) {
+      fetchEvents();
+    } else {
+      navigate("/Login");
+    }
+  }, [cookies.jwt, navigate]);
 
   return (
     <>
       <h1>Calendar</h1>
       <h2>Add New Event</h2>
-
       <div>
         <input
           type="text"
@@ -118,20 +95,17 @@ function CalendarComponent() {
           value={newEvent.title}
           onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
         />
-
         <DatePicker
           placeholderText="Start Date"
           style={{ marginRight: "10px" }}
           selected={newEvent.start}
           onChange={(start) => setNewEvent({ ...newEvent, start })}
         />
-
         <DatePicker
           placeholderText="End Date"
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
-
         <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Event
         </button>
@@ -141,7 +115,7 @@ function CalendarComponent() {
         events={allEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 600, margin: "50px" }}
+        style={{ height: 500, margin: "50px" }}
       />
     </>
   );
