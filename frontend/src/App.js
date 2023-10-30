@@ -4,6 +4,7 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import Profile from './pages/Profile';
 import BadgePage from './pages/BadgePage';
+import AllBadges from './pages/AllBadges';
 import CalendarComponent from "./pages/CalendarComponent.js";
 import Navbar from './pages/Navbar';
 import Secert from "./pages/Secert";
@@ -29,6 +30,7 @@ function App()
                     <Route exact path='/' element={<Secert />}/>
                     <Route exact path='/Profile' element={<Profile />}/>
                     <Route exact path='/Profile/BadgePage' element={<BadgePage />}/>
+                    <Route exact path='/Profile/AllBadges' element={<AllBadges />}/>
                     <Route exact path='/Profile/Calendar' element={<CalendarComponent />}/>
                 </Routes>
             </BrowserRouter>

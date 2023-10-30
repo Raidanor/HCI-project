@@ -75,6 +75,8 @@ function Navbar(props)
                                 <div class="dropdown-menu">
                                     <Link to="/Profile"><a class="dropdown-item">Your Profile</a></Link>
                                     <Link to="/Profile/BadgePage"><a class="dropdown-item">Your Badges</a></Link>
+                                    <Link to="/Profile/AllBadges"><a class="dropdown-item">All Badges</a></Link>
+                                    
                                 </div>
                             </div>
                         </li>

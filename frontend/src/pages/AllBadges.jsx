@@ -10,7 +10,7 @@ import Picture2 from "../assets/Picture2.png";
 import Picture3 from "../assets/Picture3.png";
 
 
-export default function BadgePage() {
+export default function AllBadges() {
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
     const logOut = () => {
@@ -42,7 +42,39 @@ export default function BadgePage() {
 
     return (
         <div class="container">
-            
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" class="" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" />
+                </div>
+            </div>
             
             <button onClick={logOut}>Log Out</button>
         </div>
