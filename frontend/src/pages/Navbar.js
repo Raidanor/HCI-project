@@ -39,9 +39,9 @@ function Navbar(props)
     return(
         <>
             {/* <!-- Navbar --> */}
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 {/* <!-- Container wrapper --> */}
-                <div class="container">
+                <div className="container">
                     {/* <!-- Navbar brand --> */}
                     <a class="navbar-brand me-2" href="https://mdbgo.com/">
                         <img src={icon} alt="icon" style={{width:"40px"}}/>
@@ -50,7 +50,7 @@ function Navbar(props)
 
                     {/* <!-- Toggle button --> */}
                     <button
-                    class="navbar-toggler"
+                    className="navbar-toggler"
                     type="button"
                     data-mdb-toggle="collapse"
                     data-mdb-target="#navbarButtonsExample"
@@ -58,7 +58,7 @@ function Navbar(props)
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                     >
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-bars"></i>
                     </button>
 
                     {/* <!-- Collapsible wrapper --> */}
