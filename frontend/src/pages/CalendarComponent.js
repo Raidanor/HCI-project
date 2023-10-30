@@ -126,11 +126,11 @@ function CalendarComponent() {
             placeholderText="Start Date"
             selected={newEvent.start}
             onChange={(start) => setNewEvent({ ...newEvent, start })}
-            class="justify-content-end"
+            class="leftbox"
             />
             </div>
 
-            <div class="col-6">
+            <div class="col-6 align-end">
             <DatePicker
             placeholderText="End Date"
             selected={newEvent.end}
