@@ -3,6 +3,13 @@ import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 
+import "./badge-custom.css";
+
+import Picture1 from "../assets/Picture1.png";
+import Picture2 from "../assets/Picture2.png";
+import Picture3 from "../assets/Picture3.png";
+
+
 export default function BadgePage() {
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
@@ -34,8 +41,40 @@ export default function BadgePage() {
     }, [cookies.jwt, nav]);
 
     return (
-        <div className="private">
-            <h1>Logged in on BadgePage!</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture1} alt="Badge1" class="bordering" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture2} alt="Badge2" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" class="grey" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" />
+                </div>
+                <div class="col-4">
+                    <img src = {Picture3} alt="Badge3" />
+                </div>
+            </div>
             
             <button onClick={logOut}>Log Out</button>
         </div>

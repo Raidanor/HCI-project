@@ -1,8 +1,41 @@
 import icon from "../assets/2B_icon.png";
 import { Link } from "react-router-dom";
 
-function Navbar()
+import {useState} from "react";
+
+
+function LoggedIn()
 {
+    return(
+        <>
+            <button type="button" class="btn btn-link px-3 me-2">
+            <Link to="/login">Login</Link>
+            </button>
+            <button type="button" class="btn btn-primary me-3">
+                <Link class="text-white" to="/register">Sign up</Link>
+            </button>
+        </>
+    )
+    
+}
+
+function LoggedOut()
+{
+    return(
+        <>
+            <button type="button" class="btn btn-link px-3 me-2">
+            <Link to="/">Log Out</Link>
+            </button>
+        </>
+    )
+    
+}
+
+function Navbar(props)
+{
+    // const [toggle, setToggle] = useState(true);
+    const toggleChecked = () => props.setToggle(toggle => !toggle);
+
     return(
         <>
             {/* <!-- Navbar --> */}
@@ -46,20 +79,17 @@ function Navbar()
                             </div>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/Profile/Calendar">Calendar</Link>
+                            <Link to="/Profile/Calendar"><button type="button" class="btn">Calendar</button></Link>
                         </li>
                     </ul>
                     {/* <!-- Left links --> */}
 
                     <div class="d-flex align-items-center">
-                        <button type="button" class="btn btn-link px-3 me-2">
-                            <Link to="/login">Login</Link>
-                        </button>
-                        <button type="button" class="btn btn-primary me-3">
-                            <Link class="text-white" to="/register">Sign up</Link>
-                        </button>
-                        
+                        {props.toggle ? <LoggedIn /> : <LoggedOut />}
+
                     </div>
+
+                    <button onClick={toggleChecked}>Toggle</button>
 
                     {/* <!-- Collapsible wrapper --> */}
                 </div>
@@ -69,5 +99,6 @@ function Navbar()
         </>
     )
 }
+
 
 export default Navbar;

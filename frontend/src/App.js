@@ -15,22 +15,25 @@ import React, { useEffect, useState } from "react";
 
 function App()
 {
-  return (
-    <>
-        <BrowserRouter>
-        <Navbar />
-            <ToastContainer/>
-            <Routes>
-                <Route exact path="/Register" element={<Register/>}/>
-                <Route exact path="/Login" element={<Login/>}/>
-                <Route exact path='/' element={<Secert />}/>
-                <Route exact path='/Profile' element={<Profile />}/>
-                <Route exact path='/Profile/BadgePage' element={<BadgePage />}/>
-                <Route exact path='/Profile/Calendar' element={<CalendarComponent />}/>
-            </Routes>
-        </BrowserRouter>
-    </>
-  );
+    const [toggle, setToggle] = useState(true);
+    const toggleChecked = () => setToggle(toggle => !toggle);
+
+    return(
+        <>
+            <BrowserRouter>
+            <Navbar toggle={toggle} setToggle={setToggle}/>
+                <ToastContainer/>
+                <Routes>
+                    <Route exact path="/Register" element={<Register/>}/>
+                    <Route exact path="/Login" element={<Login/>}/>
+                    <Route exact path='/' element={<Secert />}/>
+                    <Route exact path='/Profile' element={<Profile />}/>
+                    <Route exact path='/Profile/BadgePage' element={<BadgePage />}/>
+                    <Route exact path='/Profile/Calendar' element={<CalendarComponent />}/>
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;

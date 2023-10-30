@@ -1,0 +1,9 @@
+.grey
+{
+    filter: grayscale(100%);
+}
+
+.bordering
+{
+    border: 10px solid #ffe600;
+}
