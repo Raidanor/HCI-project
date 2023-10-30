@@ -9,7 +9,6 @@ import Navbar from './pages/Navbar';
 import Secert from "./pages/Secert";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
-import React, { useEffect, useState } from "react";
 
 
 
