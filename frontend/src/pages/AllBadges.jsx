@@ -42,6 +42,7 @@ export default function AllBadges() {
 
     return (
         <div class="container">
+            <br />
             <div class="row">
                 <div class="col-4">
                     <img src = {Picture1} alt="Badge1" class="grey" />

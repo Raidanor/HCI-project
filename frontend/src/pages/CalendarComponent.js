@@ -121,15 +121,17 @@ function CalendarComponent() {
             Add Event
             </button>
         </div>
+        
+        <div class="row">
+            <Calendar
+            localizer={localizer}
+            events={allEvents}
+            startAccessor="start"
+            endAccessor="end"
+            style={{ height: 500, margin: "50px" }}
+            />
         </div>
-
-        <Calendar
-        localizer={localizer}
-        events={allEvents}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 500, margin: "50px" }}
-      />
+        </div>
     </>
   );
 }

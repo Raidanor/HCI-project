@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-import profile_icon from '../assets/astronaut.png'
+import profile_icon from '../assets/astronaut.png';
 
 export default function Profile() {
     const nav = useNavigate();
@@ -40,7 +40,7 @@ export default function Profile() {
             <div className='upc'>
             <div className='gradiant'></div>
             <div className='profile-down'>
-                <img src={profile_icon} alt=""/>
+                <img src={profile_icon} alt="" />
                 <div className='profile-title'>Hi, Akbar!</div>
                 <div className='profile-description'>
                 Descriptions
