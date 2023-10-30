@@ -85,30 +85,30 @@ function CalendarComponent() {
 
   return (
     <>
-        <div class = "container">
-        <div class="row center"><h1 class="mx-auto">Calendar</h1></div>
-        <div class="row"><h2 class="mx-auto">Add New Event</h2></div>
+        <div className= "container">
+        <div className="row center"><h1 className="mx-auto">Calendar</h1></div>
+        <div className="row"><h2 className="mx-auto">Add New Event</h2></div>
 
-        <div class="row">
+        <div className="row">
             <input
             type="text"
             placeholder="Add Title"
             value={newEvent.title}
             onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-            class="w-25 mx-auto"
+            className="w-25 mx-auto"
             />
         </div>
-        <div class="row ">
-            <div class="col-6">
+        <div className="row ">
+            <div className="col-6">
             <DatePicker
             placeholderText="Start Date"
             selected={newEvent.start}
             onChange={(start) => setNewEvent({ ...newEvent, start })}
-            class="leftbox"
+            className="leftbox"
             />
             </div>
 
-            <div class="col-6 align-end">
+            <div className="col-6 align-end">
             <DatePicker
             placeholderText="End Date"
             selected={newEvent.end}
@@ -116,8 +116,8 @@ function CalendarComponent() {
             />
             </div>
         </div>
-        <div class="row">
-            <button onClick={handleAddEvent} class="w-50 mx-auto">
+        <div className="row">
+            <button onClick={handleAddEvent} className="w-50 mx-auto">
             Add Event
             </button>
         </div>

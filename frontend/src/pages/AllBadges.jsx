@@ -41,41 +41,40 @@ export default function AllBadges() {
     }, [cookies.jwt, nav]);
 
     return (
-        <div class="container">
-            <br />
-            <div class="row">
-                <div class="col-4">
-                    <img src = {Picture1} alt="Badge1" class="grey" />
+        <div className="container">
+            <div className="row">
+                <div className="col-4">
+                    <img src = {Picture1} alt="Badge1" className="grey" />
                 </div>
-                <div class="col-4">
+                <div className="col-4">
                     <img src = {Picture1} alt="Badge1" />
                 </div>
-                <div class="col-4">
-                    <img src = {Picture1} alt="Badge1" class="rounded-circle border-glowing" />
+                <div className="col-4">
+                    <img src = {Picture1} alt="Badge1" className="rounded-circle border-glowing" />
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="col-4">
-                    <img src = {Picture2} alt="Badge2" class="grey" />
+            <div className="row">
+                <div className="col-4">
+                    <img src = {Picture2} alt="Badge2" className="grey" />
                 </div>
-                <div class="col-4">
+                <div className="col-4">
                     <img src = {Picture2} alt="Badge2" />
                 </div>
-                <div class="col-4">
-                    <img src = {Picture2} alt="Badge2" class="rounded-circle border-glowing" />
+                <div className="col-4">
+                    <img src = {Picture2} alt="Badge2" className="rounded-circle border-glowing" />
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="col-4">
-                    <img src = {Picture3} alt="Badge3" class="grey" />
+            <div className="row">
+                <div className="col-4">
+                    <img src = {Picture3} alt="Badge3" className="grey" />
                 </div>
-                <div class="col-4">
+                <div className="col-4">
                     <img src = {Picture3} alt="Badge3" />
                 </div>
-                <div class="col-4">
-                    <img src = {Picture3} alt="Badge3" class="rounded-circle border-glowing" />
+                <div className="col-4">
+                    <img src = {Picture3} alt="Badge3" className="rounded-circle border-glowing" />
                 </div>
             </div>
             
