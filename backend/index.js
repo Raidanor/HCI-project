@@ -22,11 +22,11 @@ mongoose.connect("mongodb+srv://hci-access:Mongo1234@hci-project.vrvfgjv.mongodb
         console.log(err.message);
     });
 
-app.use(cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-    credentials: true,
-}));
+    app.use(cors({
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST", "DELETE", "PUT"],
+        credentials: true,
+    }));
 
 app.use(cookieParser());
 app.use(express.json());
