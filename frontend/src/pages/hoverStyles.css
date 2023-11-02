@@ -3,6 +3,7 @@
     opacity: 0.7;
     border: 2px solid #007bff;
     transition: opacity 0.3s;
+
   }
   
   /* Styles for the message when a grey badge is hovered in hoverStyles.css */
@@ -76,3 +77,15 @@
     opacity: 1;
   }
   
+  .level {
+    font-size: x-large;
+    /* text-align: center; */
+    /* margin-right: auto;
+    margin-left: auto; */
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
