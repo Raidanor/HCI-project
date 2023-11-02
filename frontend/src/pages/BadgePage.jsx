@@ -103,7 +103,7 @@ export default function BadgePage() {
     }, [cookies.jwt, nav]);
  
     //COUNTERS FOR CONDIIONS
-    var counter1 = 2, counter2 = 1, counter3 = 3;
+    var counter1 = 0, counter2 = 0, counter3 = 0;
 
 
  
@@ -151,7 +151,7 @@ export default function BadgePage() {
             </div>
  
             
-            <button onClick={logOut}>Log Out</button>
+
         </div>
     );
 }

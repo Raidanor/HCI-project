@@ -3,7 +3,7 @@ import "./pages.css";
 
 function Navbar() {
   return (
-    <div className="navbar">
+    <div className="navbar container-fluid">
       <nav id="menu">
 
         <div className="menu-item">
