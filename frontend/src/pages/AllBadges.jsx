@@ -44,7 +44,7 @@ export default function AllBadges() {
         <div className="container">
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture1} alt="Badge1" className="badge-grey" /> 
+                    <img src = {Picture1} alt="Badge1" className="grey badge-grey" /> 
                 </div>
                 <div className="col-4">
                     <img src = {Picture1} alt="Badge1" className="badge-colored"/> 
@@ -56,7 +56,7 @@ export default function AllBadges() {
             <br />
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" className="badge-grey" />
+                    <img src = {Picture2} alt="Badge2" className="grey badge-grey" />
                 </div>
                 <div className="col-4">
                     <img src = {Picture2} alt="Badge2" className="badge-colored" /> 
@@ -68,7 +68,7 @@ export default function AllBadges() {
             <br />
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" className="badge-grey" /> 
+                    <img src = {Picture3} alt="Badge3" className="grey badge-grey" /> 
                 </div>
                 <div className="col-4">
                     <img src = {Picture3} alt="Badge3" className="badge-colored"/> 
