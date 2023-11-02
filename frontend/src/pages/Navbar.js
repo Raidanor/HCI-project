@@ -1,81 +1,51 @@
 import { Link } from "react-router-dom";
-import {useState} from "react";
 import "./pages.css";
 
+function Navbar() {
+  return (
+    <div className="navbar">
+      <nav id="menu">
 
-
-function LoggedIn()
-{
-    return(
-        <>
-            <div className="center">
-            <nav id="menu">
-                
-                <div className="menu-item">
-                    <div className="menu-text">
-                    <Link to="/login"><a herf="#">Login</a></Link>
-                    </div>
-                </div>
-
-                <div className="menu-item">
-                    <div className="menu-text">
-                    <Link to="/register"><a herf="#">Register</a></Link>
-                    </div>
-                </div>
-
-                <div className="menu-item">
-                    <div className="menu-text">
-                    <Link to="/Profile/Calendar"><a herf="#">Calendar</a></Link>
-                    </div>
-                </div>
-
-                <div className="menu-item">
-                    <div className="menu-text">
-                        <div class="dropdown">
-                            <Link to="/Profile"><a herf="#" className="dropbtn">Profile</a></Link>
-                            <div className="dropdown-content">
-                                <Link to="/Profile"><a herf="#">Your Profile</a></Link>
-                                <Link to="/Profile/BadgePage"><a herf="#">Your Badges</a></Link>
-                                <Link to="/Profile/AllBadges"><a herf="#">All Badges</a></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="menu-item">
-                    <div className="menu-text">
-                    <Link to="/"><a herf="#">Logout</a></Link>
-                    </div>
-                </div>
-        </nav>
+        <div className="menu-item">
+          <div className="menu-text">
+            <Link to="/login">Login</Link>
+          </div>
         </div>
 
-        </>
-    )
-    
-}
+        <div className="menu-item">
+          <div className="menu-text">
+            <Link to="/register">Register</Link>
+          </div>
+        </div>
 
-function LoggedOut()
-{
-    return(
-        <>
-            <Link to="/"><button type="button" className="button4">Log Out</button></Link>
-        </>
-    )
-    
-}
+        <div className="menu-item">
+          <div className="menu-text">
+            <Link to="/Profile/Calendar">Calendar</Link>
+          </div>
+        </div>
 
-function Navbar(props)
-{
-    const toggleChecked = () => props.setToggle(toggle => !toggle);
-
-    return(
-        <>
-           <div className="d-flex align-items-center">
-            {props.toggle ? <LoggedIn /> : <LoggedOut />}
+        <div className="menu-item">
+          <div className="menu-text">
+            <div className="dropdown">
+              <Link to="/Profile" className="dropbtn">Profile</Link>
+              <div className="dropdown-content">
+                <Link to="/Profile">Your Profile</Link>
+                <Link to="/Profile/BadgePage">Your Badges</Link>
+                <Link to="/Profile/AllBadges">All Badges</Link>
               </div>
-        </>
-    )
-}
+            </div>
+          </div>
+        </div>
 
+        <div className="menu-item">
+          <div className="menu-text">
+            <Link to="/">Logout</Link>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+  );
+}
 
 export default Navbar;

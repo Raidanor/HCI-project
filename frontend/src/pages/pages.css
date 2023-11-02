@@ -21,6 +21,7 @@ body {
     /* background: linear-gradient(79deg,#F7944D, #C66FBC 48%,#7439db  ); */
     background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
     display: flex; 
+    padding-top: 70px;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
@@ -114,11 +115,6 @@ button {
     margin-bottom: 15px;
 }
 
-/* .body2{
-    height: 100vh;
-    background: rgba(211, 211, 211, 0.503);
-    background-image: linear-gradient(#522c78, #e0c3f5);
-} */
 
 .profile-title{
     font-size: 36px;
@@ -233,29 +229,6 @@ button {
     background-color: rgb(194, 191, 191);
 }
 
-/* .list li {
-    float: left;
-}
-
-.list2 lu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.lista li {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.lista:hover {
-    background-color: #111;
-} */
 
 nav {
     width: var(--menu-width);
@@ -331,18 +304,25 @@ nav .menu-text a:hover {
     display: block;
   }
 
-  /* Change color of dropdown links on hover */
-/* .dropdown-content a:hover {background-color: #b976de;} */
-.dropdown-content a:hover {background-image: linear-gradient(79deg, #9771d8, #e3a8dc 48%, #e7b48f);}
+.dropdown-content a:hover {
+    background-image: linear-gradient(79deg, #9771d8, #e3a8dc 48%, #e7b48f);
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
-
+.dropdown:hover .dropdown-content 
+{
+    display: block;
+}
 
 
+.navbar {
+    background-color: rgba(194, 191, 191, 0.2); 
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    padding: 0.5rem 1rem;
+    z-index: 10;
+}
 
 
 
