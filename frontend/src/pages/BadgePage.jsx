@@ -139,13 +139,13 @@ export default function BadgePage() {
             {/* 3rd row */}
             <div className="row">
                 <div className="col-4">
-                    {(counter2 > 0) ? <Condition3x1 /> : <ReturnEmpty />}
+                    {(counter3 > 0) ? <Condition3x1 /> : <ReturnEmpty />}
                 </div>
                 <div className="col-4">
-                    {(counter2 > 1) ? <Condition3x2 /> : <ReturnEmpty />}
+                    {(counter3 > 1) ? <Condition3x2 /> : <ReturnEmpty />}
                 </div>
                 <div className="col-4">
-                    {(counter2 > 2) ? <Condition3x3 /> : <ReturnEmpty />}
+                    {(counter3 > 2) ? <Condition3x3 /> : <ReturnEmpty />}
                 </div>
             </div>
 
