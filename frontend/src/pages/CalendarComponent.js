@@ -176,7 +176,7 @@ return (
                     )}
                 </div>
             </div>
-
+            <div className="row">
             <Calendar
                 localizer={localizer}
                 events={allEvents}
@@ -185,6 +185,7 @@ return (
                 style={{ height: 500, margin: "50px" }}
                 onSelectEvent={handleSelectEvent}
             />
+            </div>
         </div>
     </>
 );
