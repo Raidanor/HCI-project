@@ -89,7 +89,6 @@ export default function BadgePage() {
                     const response = await axios.post("http://localhost:3500", {}, {
                         withCredentials: true,
                     });
- 
                     if (!response.data.status) {
                         logOut(); // Call the logOut function to remove the cookie and navigate to the login page
                     }
@@ -98,17 +97,13 @@ export default function BadgePage() {
                 }
             }
         };
- 
         verifyUser();
     }, [cookies.jwt, nav]);
- 
     //COUNTERS FOR CONDIIONS
-    var counter1 = 2, counter2 = 1, counter3 = 3;
+    var counter1 = 3, counter2 = 3, counter3 = 3;
 
-
- 
     return (
-        <div class="container">
+        <div className="container">
             {/* 1st row */}
             <div className="row">
                 <div className="col-4">
@@ -121,14 +116,14 @@ export default function BadgePage() {
                     {(counter1 > 2) ? <Condition1x3 /> : <ReturnEmpty />}   
                 </div>
             </div>
- 
+
             <br />
             {/* 2nd row */}
             <div className="row">
                 <div className="col-4">
                     {(counter2 > 0) ? <Condition2x1 /> : <ReturnEmpty />}
                 </div>
-                
+
                 <div className="col-4">
                     {(counter2 > 1) ? <Condition2x2 /> : <ReturnEmpty />}
                 </div>
@@ -149,9 +144,6 @@ export default function BadgePage() {
                     {(counter3 > 2) ? <Condition3x3 /> : <ReturnEmpty />}
                 </div>
             </div>
- 
-            
-            <button onClick={logOut}>Log Out</button>
         </div>
     );
 }

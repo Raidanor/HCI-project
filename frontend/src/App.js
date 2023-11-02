@@ -4,7 +4,7 @@ import Navbar from "./pages/Navbar"
 import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import Profile from './pages/Profile';
-import BadgePage from './pages/BadgePage';
+import BadgePage from './pages/BadgePage-dispay';
 import AllBadges from './pages/AllBadges';
 import CalendarComponent from "./pages/CalendarComponent";
 import Secret from "./pages/Secert"
