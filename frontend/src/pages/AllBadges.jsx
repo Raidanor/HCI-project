@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
-
+import "./hoverStyles.css"; //new
 import "./myCSS.css";
 
 import Picture1 from "../assets/Picture1.png";
@@ -44,37 +44,37 @@ export default function AllBadges() {
         <div className="container">
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture1} alt="Badge1" className="grey" />
+                    <img src = {Picture1} alt="Badge1" className="grey badge-grey" /> 
                 </div>
                 <div className="col-4">
-                    <img src = {Picture1} alt="Badge1" />
+                    <img src = {Picture1} alt="Badge1" className="badge-colored"/> 
                 </div>
                 <div className="col-4">
-                    <img src = {Picture1} alt="Badge1" className="rounded-circle border-glowing" />
-                </div>
-            </div>
-            <br />
-            <div className="row">
-                <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" className="grey" />
-                </div>
-                <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" />
-                </div>
-                <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" className="rounded-circle border-glowing" />
+                    <img src = {Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing" />
                 </div>
             </div>
             <br />
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" className="grey" />
+                    <img src = {Picture2} alt="Badge2" className="grey badge-grey" />
                 </div>
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" />
+                    <img src = {Picture2} alt="Badge2" className="badge-colored" /> 
                 </div>
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" className="rounded-circle border-glowing" />
+                    <img src = {Picture2} alt="Badge2" className="badge-rounded rounded-circle border-glowing" />
+                </div>
+            </div>
+            <br />
+            <div className="row">
+                <div className="col-4">
+                    <img src = {Picture3} alt="Badge3" className="grey badge-grey" /> 
+                </div>
+                <div className="col-4">
+                    <img src = {Picture3} alt="Badge3" className="badge-colored"/> 
+                </div>
+                <div className="col-4">
+                    <img src = {Picture3} alt="Badge3" className="badge-rounded rounded-circle border-glowing" />
                 </div>
             </div>
             

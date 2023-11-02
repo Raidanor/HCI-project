@@ -1,3 +1,50 @@
+/* Add a class for the hover effect */
+.badge:hover {
+    opacity: 0.7;
+    border: 2px solid #007bff;
+    transition: opacity 0.3s;
+  }
+  
+  /* Apply grayscale filter to elements with the "grey" class */
+  .grey {
+    filter: grayscale(100%);
+  }
+  
+  /* Add a yellow border to elements with the "bordering" class */
+  .bordering {
+    border: 10px solid #ffe600;
+  }
+  
+  /* Center elements with the "centers" class */
+  .centers {
+    margin: auto;
+  }
+  
+  /* Style for left-box elements with the "leftbox" class */
+  .leftbox {
+    margin: 20px;
+    align-items: center;
+  }
+  
+  /* Add padding to elements with the "rightbox" class */
+  .rightbox {
+    padding-left: 10px;
+  }
+  
+  /* Style for elements with the "addevent" class */
+  .addevent {
+    margin: 0%;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  /* Add a glowing border to elements with the "border-glowing" class */
+  .border-glowing {
+    -moz-box-shadow: 0 0 5px 5px #ffee00;
+    -webkit-box-shadow: 0 0 5px 5px #ffee00;
+    box-shadow: 0 0 10px 10px #ffee00;
+  }
+  
 .grey
 {
     filter: grayscale(100%);
@@ -36,3 +83,4 @@
     -webkit-box-shadow: 0 0 5px 5px #ffee00;
     box-shadow: 0 0 20px 10px #ffee00;
 }
+
