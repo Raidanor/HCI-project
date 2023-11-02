@@ -56,59 +56,62 @@ export default function AllBadges() {
                     <h2 className="level">Level 3</h2>
                 </div>
             </div> */}
+
+            <div className="row justify-content-around py-3">
+                <div className="col-3"><h1>Level 1</h1></div>
+                <div className="col-3"><h1>Level 2</h1></div>
+                <div className="col-3"><h1>Level 3</h1></div>
+            </div>
+
             <div className="row">
                 
                 <div className="col-4">
-                <h2 className="level">Level 1</h2>
                 <img src = {Picture1} alt="Badge1" className="grey badge-grey" /> 
-                <div>Recieve this badge once you have completed all you tasks for one day.</div>
+                <div className="py-3">Unlock this badge once you have completed all you tasks for one day.</div>
                 
                 </div>
                 
                 
                 <div className="col-4">
-                    <h2 className="level">Level 2</h2>
                     <img src = {Picture1} alt="Badge1" className="badge-colored"/> 
-                    <div>Recieve this badge once you have completed all you tasks for one day seven times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one day seven times.</div>
                 </div>
                 <div className="col-4">
-                    <h2 className="level">Level 3</h2>
                     <img src = {Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing" />
-                    <div>Recieve this badge once you have completed all you tasks for one day thirty times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one day thirty times.</div>
                 </div>
             </div>
             <br />
             <div className="row">
                 <div className="col-4">
                     <img src = {Picture2} alt="Badge2" className="grey badge-grey" />
-                    <div>Recieve this badge once you have completed all you tasks for one week.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one week.</div>
                 </div>
                 <div className="col-4">
                     <img src = {Picture2} alt="Badge2" className="badge-colored" /> 
-                    <div>Recieve this badge once you have completed all you tasks for one week ten times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one week ten times.</div>
                 </div>
                 <div className="col-4">
                     <img src = {Picture2} alt="Badge2" className="badge-rounded rounded-circle border-glowing" />
-                    <div>Recieve this badge once you have completed all you tasks for one week 30 times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one week 30 times.</div>
                 </div>
             </div>
             <br />
             <div className="row">
                 <div className="col-4">
                     <img src = {Picture3} alt="Badge3" className="grey badge-grey" /> 
-                    <div>Recieve this badge once you have completed all you tasks for one month.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one month.</div>
                 </div>
                 <div className="col-4">
                     <img src = {Picture3} alt="Badge3" className="badge-colored"/> 
-                    <div>Recieve this badge once you have completed all you tasks for one month six times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one month six times.</div>
                 </div>
                 <div className="col-4">
                     <img src = {Picture3} alt="Badge3" className="badge-rounded rounded-circle border-glowing" />
-                    <div>Recieve this badge once you have completed all you tasks for one month twelve times.</div>
+                    <div className="py-3">Unlock this badge once you have completed all you tasks for one month twelve times.</div>
                 </div>
             </div>
             
-            <button onClick={logOut}>Log Out</button>
         </div>
     );
 }

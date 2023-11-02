@@ -130,7 +130,7 @@ function CalendarComponent() {
 return (
     <>
         <div className="container">
-            <div className="row">
+            <div className="row py-3">
                 <div className="col"><h3 className="child addtasktext">Add New Event</h3></div>
                 <div className="col">
                     <input
@@ -160,7 +160,7 @@ return (
                     />
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center py-3">
                 <div className="col-2">
                     <button onClick={handleAddOrUpdateEvent} className="button3">
                         {editMode ? 'Update Event' : 'Add Event'}
@@ -168,7 +168,7 @@ return (
                 </div>
             </div>
             <div className="row justify-content-around">
-                <div className="col-6">
+                <div className="col-4 mx-auto">
                     {editMode && (
                         <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto button3">
                             Cancel
@@ -176,7 +176,7 @@ return (
                     )}
                 </div>
 
-                <div className="col-6">
+                <div className="col-4">
                     {selectedEvent && (
                             <button onClick={handleDeleteEvent} className="btn btn-danger w-50 mx-auto button3">
                                 Delete Event
@@ -184,13 +184,13 @@ return (
                     )}
                 </div>
             </div>
-            <div className="row">
+            <div className="row py-3">
                 <Calendar
                     localizer={localizer}
                     events={allEvents}
                     startAccessor="start"
                     endAccessor="end"
-                    style={{ height: 500, paddingTop: 40}}
+                    style={{ height: 500}}
                     onSelectEvent={handleSelectEvent}
                 />
             </div>
