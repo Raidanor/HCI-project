@@ -10,6 +10,7 @@ import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+import "./pages.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -86,10 +87,12 @@ function CalendarComponent() {
   return (
     <>
         <div className= "container">
-        <div className="row center"><h1 className="mx-auto">Calendar</h1></div>
-        <div className="row"><h2 className="mx-auto">Add New Event</h2></div>
-
-        <div className="row">
+        {/* <div className="row center"><h1 className="mx-auto">Calendar</h1></div> */}
+        {/* <div><h1 className="calendartext">Calendar</h1></div> */}
+        <div className="parent">
+        {/* <div className="row"><h2 className="mx-auto">Add New Event</h2></div> */}
+        <div><h2 className="child addtasktext">Add New Event</h2></div>
+        {/* <div className="row">
             <input
             type="text"
             placeholder="Add Title"
@@ -97,8 +100,17 @@ function CalendarComponent() {
             onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
             className="w-25 mx-auto"
             />
+        </div> */}
+        <div>
+            <input
+            type="text"
+            placeholder="Add Title"
+            value={newEvent.title}
+            onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+            className="child"
+            />
         </div>
-        <div className="row ">
+        {/* <div className="row ">
             <div className="col-6">
             <DatePicker
             placeholderText="Start Date"
@@ -106,22 +118,60 @@ function CalendarComponent() {
             onChange={(start) => setNewEvent({ ...newEvent, start })}
             className="leftbox"
             />
-            </div>
+            </div> */}
 
-            <div className="col-6 align-end">
+          {/* <div className="row ">
+            <div className="col-6">
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            className="leftbox"
+            />
+            </div> */}
+
+            
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            className="child"
+            />
+            
+
+            {/* <div className="col-6 align-end">
             <DatePicker
             placeholderText="End Date"
             selected={newEvent.end}
             onChange={(end) => setNewEvent({ ...newEvent, end })}
             />
-            </div>
-        </div>
-        <div className="row">
+            </div> */}
+
+            
+            <DatePicker
+            placeholderText="End Date"
+            selected={newEvent.end}
+            onChange={(end) => setNewEvent({ ...newEvent, end })}
+            className="child"
+            />
+            
+
+            
+        
+        {/* <div className="row">
             <button onClick={handleAddEvent} className="w-50 mx-auto">
+            Add Event
+            </button> */}
+
+            <div className="row">
+            <button onClick={handleAddEvent} className="button3">
             Add Event
             </button>
         </div>
         </div>
+
+        </div>
+        
 
         <Calendar
         localizer={localizer}

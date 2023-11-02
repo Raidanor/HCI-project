@@ -1,0 +1,78 @@
+/* Styles for the badge on hover in hoverStyles.css */
+.badge-grey:hover {
+    opacity: 0.7;
+    border: 2px solid #007bff;
+    transition: opacity 0.3s;
+  }
+  
+  /* Styles for the message when a grey badge is hovered in hoverStyles.css */
+  .badge-grey:hover::after {
+    content: "You're making progress! Keep it up with the grey badge.";
+    position: absolute;
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .badge-grey:hover:hover::after {
+    opacity: 1;
+  }
+  
+  /* Styles for the badge on hover in hoverStyles.css */
+  .badge-colored:hover {
+    opacity: 0.7;
+    border: 2px solid #ff6600;
+    transition: opacity 0.3s;
+  }
+  
+  /* Styles for the message when a colored badge is hovered in hoverStyles.css */
+  .badge-colored:hover::after {
+    content: "Congratulations! You've achieved the colored badge level.";
+    position: absolute;
+    background-color: #ff6600;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .badge-colored:hover:hover::after {
+    opacity: 1;
+  }
+  
+  /* Styles for the badge on hover in hoverStyles.css */
+  .badge-rounded:hover {
+    opacity: 0.7;
+    border: 2px solid #00cc44;
+    transition: opacity 0.3s;
+  }
+  
+  /* Styles for the message when a rounded badge is hovered in hoverStyles.css */
+  .badge-rounded:hover::after {
+    content: "Wow! You've reached the highest level with the rounded badge.";
+    position: absolute;
+    background-color: #00cc44;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .badge-rounded:hover:hover::after {
+    opacity: 1;
+  }
+  
