@@ -66,14 +66,14 @@ export default function AllBadges() {
             <div className="row">
                 
                 <div className="col-4">
-                <img src = {Picture1} alt="Badge1" className="grey badge-grey" /> 
+                <img src = {Picture1} alt="Badge1" className="grey badge-grey rounded-circle" /> 
                 <div className="py-3">Unlock this badge once you have completed all you tasks for one day.</div>
                 
                 </div>
                 
                 
                 <div className="col-4">
-                    <img src = {Picture1} alt="Badge1" className="badge-colored"/> 
+                    <img src = {Picture1} alt="Badge1" className="badge-colored rounded-circle"/> 
                     <div className="py-3">Unlock this badge once you have completed all you tasks for one day seven times.</div>
                 </div>
                 <div className="col-4">
@@ -84,11 +84,11 @@ export default function AllBadges() {
             <br />
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" className="grey badge-grey" />
+                    <img src = {Picture2} alt="Badge2" className="grey badge-grey rounded-circle" />
                     <div className="py-3">Unlock this badge once you have completed all you tasks for one week.</div>
                 </div>
                 <div className="col-4">
-                    <img src = {Picture2} alt="Badge2" className="badge-colored" /> 
+                    <img src = {Picture2} alt="Badge2" className="badge-colored rounded-circle" /> 
                     <div className="py-3">Unlock this badge once you have completed all you tasks for one week ten times.</div>
                 </div>
                 <div className="col-4">
@@ -99,11 +99,11 @@ export default function AllBadges() {
             <br />
             <div className="row">
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" className="grey badge-grey" /> 
+                    <img src = {Picture3} alt="Badge3" className="grey badge-grey rounded-circle" /> 
                     <div className="py-3">Unlock this badge once you have completed all you tasks for one month.</div>
                 </div>
                 <div className="col-4">
-                    <img src = {Picture3} alt="Badge3" className="badge-colored"/> 
+                    <img src = {Picture3} alt="Badge3" className="badge-colored rounded-circle"/> 
                     <div className="py-3">Unlock this badge once you have completed all you tasks for one month six times.</div>
                 </div>
                 <div className="col-4">
