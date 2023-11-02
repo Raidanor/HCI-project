@@ -45,3 +45,43 @@
     box-shadow: 0 0 10px 10px #ffee00;
   }
   
+=======
+.grey
+{
+    filter: grayscale(100%);
+}
+
+.bordering
+{
+    border: 10px solid #ffe600;
+}
+
+.centers {
+    margin: auto;
+}
+
+.leftbox
+{
+    margin: 20px;
+    align-items: center;
+}
+
+.rightbox
+{
+    padding-left:10px;
+}
+
+.addevent
+{
+    margin: 0%;
+    width: 50%;
+    padding: 10px;
+}
+
+.border-glowing
+{
+    -moz-box-shadow: 0 0 5px 5px #ffee00;
+    -webkit-box-shadow: 0 0 5px 5px #ffee00;
+    box-shadow: 0 0 20px 10px #ffee00;
+}
+

@@ -47,49 +47,4 @@ router.get('/', authenticateToken, async (req, res) => {
     }
 });
 
-// For getting the events so we can edit them
-router.put('/:id', authenticateToken, async (req, res) => {
-    const { id } = req.params;
-    const { title, start, end } = req.body;
-
-    try{
-        const calendarEvent = await EventModel.findOne({ _id: id, user: req.user._id});
-        if(!calendarEvent) {
-            return res.status(404).json({ error: 'No event found'})
-        }
-
-        calendarEvent.title = title;
-        calendarEvent.start = start;
-        calendarEvent.end = end;
-        await calendarEvent.save();
-
-        res.json(calendarEvent)
-    } catch (error) {
-        res.status(400).json({ error: error.message});
-    }
-})
-
-// For deleting events!
-router.delete('/:id', authenticateToken, async (req, res) => {
-    const { id } = req.params;
-
-    // Bug testing for ID checking
-    if (!id) {
-        return res.status(400).send('No ID provided');
-    }
-
-    console.log('Delete request received for ID:', req.params.id);
-
-    try{ 
-        const calendarEvent = await EventModel.findOneAndDelete({ _id: id, user: req.user._id});
-        if(!calendarEvent) {
-            return res.status(404).json({ error: 'Event not found'})
-        }
-        // Because nothing needs to be sent back for deleting an event
-        res.status(204).send() 
-    }catch (error){
-        res.status(500).json({ error: error.message})
-    }
-})
-
 module.exports = router;
