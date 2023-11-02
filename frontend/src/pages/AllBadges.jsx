@@ -61,7 +61,6 @@ export default function AllBadges() {
                     <div className="badge-text">Recieve this badge once you've completed all your tasks for one day seven times.</div>
                 </div>
                 <div className="col-4">
-                    <h2 className="level">Level 3</h2>
                     <img src = {Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing" />
                     <div className="badge-text">Recieve this badge once you've completed all your tasks for one day thirty times.</div>
                 </div>

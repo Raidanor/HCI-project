@@ -51,7 +51,8 @@ export default function Profile() {
                 <div className='block-display'>
                 {/* <div className='buttonProfile'> */}
                 {/* <div className='btn-group'> */}
-                <button className="button">Rewards</button>
+                <Link to="/profile/badgepage"><button className="button2">Badge Page</button></Link>
+                {/* </div> */}
                 {/* </div> */}
                 {/* <button className="button">Calendar</button>
                 <button className="button">Logout</button> */}

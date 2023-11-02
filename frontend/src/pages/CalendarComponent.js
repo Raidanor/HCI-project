@@ -130,61 +130,70 @@ function CalendarComponent() {
 return (
     <>
         <div className="container">
-            <div className="parent">
-                <div><h2 className="child addtasktext">Add New Event</h2></div>
-                <div>
+            <div className="row py-3">
+                <div className="col"><h3 className="child addtasktext">Add New Event</h3></div>
+                <div className="col">
                     <input
                         type="text"
                         placeholder="Add Title"
                         value={newEvent.title}
                         onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                        className="child"
+                        // className="child"
                     />
                 </div>
                 
-                <DatePicker
-                    placeholderText="Start Date"
-                    selected={newEvent.start}
-                    onChange={(start) => setNewEvent({ ...newEvent, start })}
-                    className="child"
-                />
-                <DatePicker
-                    placeholderText="End Date"
-                    selected={newEvent.end}
-                    onChange={(end) => setNewEvent({ ...newEvent, end })}
-                    className="child"
-                />
+                <div className="col">
+                    <DatePicker
+                        placeholderText="Start Date"
+                        selected={newEvent.start}
+                        onChange={(start) => setNewEvent({ ...newEvent, start })}
+                        // className="child"
+                    />
+                </div>
 
-                <div className="row">
+                <div className="col">
+                    <DatePicker
+                        placeholderText="End Date"
+                        selected={newEvent.end}
+                        onChange={(end) => setNewEvent({ ...newEvent, end })}
+                        // className="child"
+                    />
+                </div>
+            </div>
+            <div className="row justify-content-center py-3">
+                <div className="col-2">
                     <button onClick={handleAddOrUpdateEvent} className="button3">
                         {editMode ? 'Update Event' : 'Add Event'}
                     </button>
                 </div>
-                
-                {editMode && (
-                    <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
-                        Cancel
-                    </button>
-                )}
-                <div className="row">
+            </div>
+            <div className="row justify-content-around">
+                <div className="col-4 mx-auto">
+                    {editMode && (
+                        <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
+                            Cancel
+                        </button>
+                    )}
+                </div>
+
+                <div className="col-4">
                     {selectedEvent && (
-                        <div className="row mt-2">
                             <button onClick={handleDeleteEvent} className="btn btn-danger w-50 mx-auto">
                                 Delete Event
                             </button>
-                        </div>
                     )}
                 </div>
             </div>
-
-            <Calendar
-                localizer={localizer}
-                events={allEvents}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 500, margin: "50px" }}
-                onSelectEvent={handleSelectEvent}
-            />
+            <div className="row py-3">
+                <Calendar
+                    localizer={localizer}
+                    events={allEvents}
+                    startAccessor="start"
+                    endAccessor="end"
+                    style={{ height: 500}}
+                    onSelectEvent={handleSelectEvent}
+                />
+            </div>
         </div>
     </>
 );
