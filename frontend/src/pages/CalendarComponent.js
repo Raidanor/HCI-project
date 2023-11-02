@@ -170,7 +170,7 @@ return (
             <div className="row justify-content-around">
                 <div className="col-4 mx-auto">
                     {editMode && (
-                        <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto button3">
+                        <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
                             Cancel
                         </button>
                     )}
@@ -178,7 +178,7 @@ return (
 
                 <div className="col-4">
                     {selectedEvent && (
-                            <button onClick={handleDeleteEvent} className="btn btn-danger w-50 mx-auto button3">
+                            <button onClick={handleDeleteEvent} className="btn btn-danger w-50 mx-auto">
                                 Delete Event
                             </button>
                     )}
