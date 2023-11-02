@@ -11,6 +11,7 @@ import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
+import "./pages.css";
 
 
 const locales = {
@@ -125,35 +126,92 @@ function CalendarComponent() {
         } else {
             navigate("/login");
         }
-    }, [cookies.jwt, navigate]);
+      }
+    };
+  
+    if (cookies.jwt) {
+      fetchEvents();
+    } else {
+      navigate("/Login");
+    }
+  }, [cookies.jwt, navigate]);
 
-    // Populate form when an event is selected
-    useEffect(() => {
-        if (selectedEvent) {
-            setNewEvent({
-                title: selectedEvent.title,
-                start: new Date(selectedEvent.start),
-                end: new Date(selectedEvent.end),
-                id: selectedEvent._id 
-            });
-        }
-    }, [selectedEvent]);
-
-    
-    return (
-        <>
-        <div className="container">
-            <div className="row center"><h1 className="mx-auto">Calendar</h1></div>
-            <div className="row"><h2 className="mx-auto">{editMode ? 'Edit Event' : 'Add New Event'}</h2></div>
-    
-            <div className="row">
+  return (
+    <>
+        <div className= "container">
+        {/* <div className="row center"><h1 className="mx-auto">Calendar</h1></div> */}
+        {/* <div><h1 className="calendartext">Calendar</h1></div> */}
+        <div className="parent">
+        {/* <div className="row"><h2 className="mx-auto">Add New Event</h2></div> */}
+        <div><h2 className="child addtasktext">Add New Event</h2></div>
+        {/* <div className="row">
+        </div> */}
+        <div>
             <input
-                type="text"
-                placeholder="Add Title"
-                value={newEvent.title}
-                onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                className="w-25 mx-auto"
+            type="text"
+            placeholder="Add Title"
+            value={newEvent.title}
+            onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+            className="child"
             />
+        </div>
+        {/* <div className="row ">
+            <div className="col-6">
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            className="leftbox"
+            />
+            </div> */}
+
+          {/* <div className="row ">
+            <div className="col-6">
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            className="leftbox"
+            />
+            </div> */}
+
+            
+            <DatePicker
+            placeholderText="Start Date"
+            selected={newEvent.start}
+            onChange={(start) => setNewEvent({ ...newEvent, start })}
+            className="child"
+            />
+            
+
+            {/* <div className="col-6 align-end">
+            <DatePicker
+            placeholderText="End Date"
+            selected={newEvent.end}
+            onChange={(end) => setNewEvent({ ...newEvent, end })}
+            />
+            </div> */}
+
+            
+            <DatePicker
+            placeholderText="End Date"
+            selected={newEvent.end}
+            onChange={(end) => setNewEvent({ ...newEvent, end })}
+            className="child"
+            />
+            
+
+            
+        
+        {/* <div className="row">
+            <button onClick={handleAddEvent} className="w-50 mx-auto">
+            Add Event
+            </button> */}
+
+            <div className="row">
+            <button onClick={handleAddEvent} className="button3">
+            Add Event
+            
             </div>
             <div className="row ">
             <div className="col-6">
@@ -176,6 +234,7 @@ function CalendarComponent() {
             <div className="row">
             <button onClick={handleAddOrUpdateEvent} className="btn btn-primary w-50 mx-auto">
                 {editMode ? 'Update Event' : 'Add Event'}
+
             </button>
             {editMode && (
                 <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
@@ -192,8 +251,6 @@ function CalendarComponent() {
             )}
         </div>
 
-
-    
         <Calendar
 
             localizer={localizer}

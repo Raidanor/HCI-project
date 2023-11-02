@@ -1,69 +1,81 @@
-import React from 'react';
-import icon from "../assets/2B_icon.png";
 import { Link } from "react-router-dom";
-import Cookies from 'js-cookie';
+import {useState} from "react";
+import "./pages.css";
 
-function LoggedIn() {
-    const handleLogout = () => {
-        Cookies.remove('jwt'); 
-        window.location.href = '/'; 
-    };
 
-    return (
+
+function LoggedIn()
+{
+    return(
         <>
-            <button type="button" className="btn btn-link px-3 me-2" onClick={handleLogout}>
-                Log Out
-            </button>
-        </>
-    );
-}
-
-function LoggedOut() {
-    return (
-        <>
-            <button type="button" className="btn btn-link px-3 me-2">
-                <Link to="/login">Login</Link>
-            </button>
-            <button type="button" className="btn btn-primary me-3">
-                <Link className="text-white" to="/register">Sign up</Link>
-            </button>
-        </>
-    );
-}
-
-function Navbar() {
-    const isLoggedIn = !!Cookies.get('jwt'); 
-
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container">
-                <a className="navbar-brand me-2" href="https://mdbgo.com/">
-                    <img src={icon} alt="icon" style={{width:"40px"}}/>
-                    HCI
-                </a>
-
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarButtonsExample"
-                    aria-controls="navbarButtonsExample"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <i className="fas fa-bars"></i>
-                </button>
-
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    {/* Rest of your navbar items */}
-                </ul>
-
-                <div className="d-flex align-items-center">
-                    {isLoggedIn ? <LoggedIn /> : <LoggedOut />}
+            <div className="center">
+            <nav id="menu">
+                
+                <div className="menu-item">
+                    <div className="menu-text">
+                    <Link to="/login"><a herf="#">Login</a></Link>
+                    </div>
                 </div>
-            </div>
+
+                <div className="menu-item">
+                    <div className="menu-text">
+                    <Link to="/register"><a herf="#">Register</a></Link>
+                    </div>
+                </div>
+
+                <div className="menu-item">
+                    <div className="menu-text">
+                    <Link to="/Profile/Calendar"><a herf="#">Calendar</a></Link>
+                    </div>
+                </div>
+
+                <div className="menu-item">
+                    <div className="menu-text">
+                        <div class="dropdown">
+                            <Link to="/Profile"><a herf="#" className="dropbtn">Profile</a></Link>
+                            <div className="dropdown-content">
+                                <Link to="/Profile"><a herf="#">Your Profile</a></Link>
+                                <Link to="/Profile/BadgePage"><a herf="#">Your Badges</a></Link>
+                                <Link to="/Profile/AllBadges"><a herf="#">All Badges</a></Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="menu-item">
+                    <div className="menu-text">
+                    <Link to="/"><a herf="#">Logout</a></Link>
+                    </div>
+                </div>
         </nav>
-    );
+        </div>
+
+        </>
+    )
+    
 }
+
+function LoggedOut()
+{
+    return(
+        <>
+            <Link to="/"><button type="button" className="button4">Log Out</button></Link>
+        </>
+    )
+    
+}
+
+function Navbar(props)
+{
+    const toggleChecked = () => props.setToggle(toggle => !toggle);
+
+    return(
+        <>
+           <div className="d-flex align-items-center">
+            {props.toggle ? <LoggedIn /> : <LoggedOut />}
+              </div>
+        </>
+    )
+}
+
 
 export default Navbar;
