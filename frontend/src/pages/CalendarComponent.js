@@ -191,17 +191,22 @@ function CalendarComponent() {
             </div>
             )}
         </div>
+
+
     
         <Calendar
+
             localizer={localizer}
             events={allEvents}
             startAccessor="start"
             endAccessor="end"
             style={{ height: 500, margin: "50px" }}
+
             onSelectEvent={handleSelectEvent}
         />
         </>
     );
+
 }
 
 export default CalendarComponent;
