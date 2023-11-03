@@ -1,23 +1,22 @@
-# Welcome to our teams Project
-> We have created a website that allows the user to create, update, delete and marks tasks on their own calendar
-> not quite everything got finished but that'll be explained in detail later!
+# Welcome to Our Team's Project
+> We've created a website that allows user to create, update, delete, and makr tasks on their personal calendar
+> Note all the task and functionality are not full completed
 
-## Getting started
+## Getting Started
+This project uses a React app template. After downloading our files:
 
-This project uses a react-app template, so once the files have been loaded
+1. Navigate to the frontend: cd frontend
+2. Install the dependencies (this might take a while due to the size): npm install
+3. Start the frontend: npm start
 
-1. cd frontend
-2. npm install `This is a larger download and may take a moment!`
-3. npm start
-** Please note you need to start the backend too before use**
-4. Create a new terminal, if you are using VS code there should be a little plus icon you can click
-5. cd backend
-6. npm install
-7. npm uninstall bcrypt
-8. npm install bcrypt
-9. npm start
+** Note: You need to start the backend as well to use our application! 
 
-## Using the application
+1. Open a new terminal. If you're using VS Code, you should see a little '+' icon that you can click.
+2. Navigate to the backend: cd backend
+3. Install the backend dependencies: npm install
+4. Uninstall bcrypt: npm uninstall bcrypt
+5. Reinstall bcrypt: npm install bcrypt
+6. Start the backend: npm start
 
-After completing the steps in getting started you can now use the applcation in your
-local webbrowser! 
+## Using the Application
+After completing the steps in the "Getting Started" section, you can access the application in your local web browser!
