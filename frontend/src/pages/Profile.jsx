@@ -41,6 +41,7 @@ export default function Profile() {
     }, [cookies.jwt, nav]);
 
     return (
+        <div className="container">
             <div className='row justify-content-center'>
                 <div className='upc'>
                     <div className='profile-down'>
@@ -56,6 +57,7 @@ export default function Profile() {
                         </div>
                     </div>   
                 </div>
-            </div>            
+            </div>
+        </div>      
     );
 }

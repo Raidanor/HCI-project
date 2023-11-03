@@ -286,3 +286,8 @@ nav .menu-text a:hover {
 .btn-primary:hover, .btn-secondary:hover, .btn-danger:hover {
     opacity: 0.8;
 }
+
+.add-flex
+{
+    display: flex;
+}
