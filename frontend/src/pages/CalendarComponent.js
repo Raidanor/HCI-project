@@ -93,6 +93,21 @@ function CalendarComponent() {
         });
     };
 
+    const handleMarkAsDone = async () => {
+        if (!selectedEvent) return;
+    
+        axios.patch(`http://localhost:3500/events/${selectedEvent._id}/done`, { isDone: !selectedEvent.isDone }, {
+            headers: {
+                Authorization: `Bearer ${cookies.jwt}`,
+            },
+        }).then((response) => {
+            setAllEvents(allEvents.map(event => event._id === selectedEvent._id ? {...selectedEvent, isDone: !selectedEvent.isDone} : event));
+        }).catch((error) => {
+            console.error('Could not mark the event as done:', error);
+        });
+    };
+    
+
     // Pretty evident what this does, when the form needs to be cleared this function will clear out the data!
     const resetForm = () => {
         setEditMode(false);
@@ -177,7 +192,9 @@ return (
                     </div>
 
                     <div className="form-group col-md-3">
-                        <button type="submit" className="btn btn-primary"> {editMode ? 'Update Event' : 'Add Event'} </button>
+                        <button type="submit" className="btn btn-primary">
+                            {editMode ? 'Update Event' : 'Add Event'}
+                        </button>
                         {editMode && (
                             <button type="button" onClick={resetForm} className="btn btn-secondary ml-2">
                                 Cancel
@@ -192,10 +209,12 @@ return (
                     <button onClick={handleDeleteEvent} className="btn btn-danger">
                         Delete Event
                     </button>
+                    <button onClick={handleMarkAsDone} className="btn btn-success ml-2">
+                        Mark as {selectedEvent.isDone ? 'Undone' : 'Done'}
+                    </button>
                 </div>
             )}
 
-            {/* Row for the calendar */}
             <div className="mt-5">
                 <Calendar
                     localizer={localizer}
@@ -204,11 +223,20 @@ return (
                     endAccessor="end"
                     style={{ height: 500 }}
                     onSelectEvent={handleSelectEvent}
+                    eventPropGetter={event => {
+                        return {
+                            style: {
+                                backgroundColor: event.isDone ? 'green' : '#3174ad',
+                                borderColor: event.isDone ? 'darkgreen' : '#265a88',
+                            },
+                        };
+                    }}
                 />
             </div>
         </div>
     </>
 );
+
 }
 export default CalendarComponent;
 

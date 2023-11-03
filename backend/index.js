@@ -24,7 +24,7 @@ mongoose.connect("mongodb+srv://hci-access:Mongo1234@hci-project.vrvfgjv.mongodb
 
     app.use(cors({
         origin: "http://localhost:3000",
-        methods: ["GET", "POST", "DELETE", "PUT"],
+        methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
         credentials: true,
     }));
 
