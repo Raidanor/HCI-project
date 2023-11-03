@@ -239,7 +239,7 @@ nav .menu-text a:hover {
 
 .navbar {
     background-color: rgba(194, 191, 191, 0.2); 
-    /* position: fixed; */
+    position: fixed; /* Please don't delete this line again, it keeps the navbar on top! */
     top: 0;
     left: 0;
     width: 100%;

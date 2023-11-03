@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { toast } from "react-toastify";
 import axios from "axios";
 import profile_icon from '../assets/astronaut.png'
-// import Picture1 from "../assets/Picture1.png";
-// import Picture2 from "../assets/Picture2.png";
-// import Picture3 from "../assets/Picture3.png";
+
 
 export default function Profile() {
     const nav = useNavigate();
@@ -27,6 +26,10 @@ export default function Profile() {
 
                     if (!response.data.status) {
                         logOut(); // Call the logOut function to remove the cookie and navigate to the login page
+                    } else {
+                        if (response.data && response.data.user) {
+                            toast(`Hi ${response.data.user}`, { theme: 'dark' });
+                        }
                     }
                 } catch (error) {
                     console.error("Error:", error);
