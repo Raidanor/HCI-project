@@ -131,7 +131,7 @@ return (
     <>
         <div className="container">
             <div className="row py-3">
-                <div className="col"><h3 className="child addtasktext">Add New Event</h3></div>
+                <div className="col"><h3 className="mt-3">Add New Event</h3></div>
                 <div className="col">
                     <input
                         type="text"
@@ -168,7 +168,7 @@ return (
                 </div>
             </div>
             <div className="row justify-content-around">
-                <div className="col-4 mx-auto">
+                <div className="col-4">
                     {editMode && (
                         <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
                             Cancel
