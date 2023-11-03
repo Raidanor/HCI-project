@@ -127,70 +127,70 @@ function CalendarComponent() {
         navigate("/login");
     }
 }, [cookies.jwt, navigate]);
+
 return (
     <>
         <div className="container">
+            {/* Row for the heading */}
             <div className="row py-3">
-                <div className="col"><h3 className="child addtasktext">Add New Event</h3></div>
+                <div className="col">
+                    <h3 className="addtasktext">Add New Event</h3>
+                </div>
+            </div>
+            {/* Row for the form fields */}
+            <div className="row py-3">
                 <div className="col">
                     <input
                         type="text"
                         placeholder="Add Title"
                         value={newEvent.title}
                         onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                        // className="child"
+                        className="form-control"
                     />
                 </div>
-                
                 <div className="col">
                     <DatePicker
                         placeholderText="Start Date"
                         selected={newEvent.start}
                         onChange={(start) => setNewEvent({ ...newEvent, start })}
-                        // className="child"
+                        className="form-control"
                     />
                 </div>
-
                 <div className="col">
                     <DatePicker
                         placeholderText="End Date"
                         selected={newEvent.end}
                         onChange={(end) => setNewEvent({ ...newEvent, end })}
-                        // className="child"
+                        className="form-control"
                     />
                 </div>
             </div>
+            {/* Row for buttons */}
             <div className="row justify-content-center py-3">
-                <div className="col-2">
-                    <button onClick={handleAddOrUpdateEvent} className="button3">
+                <div className="button-group">
+                    <button onClick={handleAddOrUpdateEvent} className="btn btn-primary">
                         {editMode ? 'Update Event' : 'Add Event'}
                     </button>
-                </div>
-            </div>
-            <div className="row justify-content-around">
-                <div className="col-4 mx-auto">
                     {editMode && (
-                        <button onClick={resetForm} className="btn btn-secondary w-50 mx-auto">
+                        <button onClick={resetForm} className="btn btn-secondary">
                             Cancel
                         </button>
                     )}
-                </div>
-
-                <div className="col-4">
                     {selectedEvent && (
-                            <button onClick={handleDeleteEvent} className="btn btn-danger w-50 mx-auto">
-                                Delete Event
-                            </button>
+                        <button onClick={handleDeleteEvent} className="btn btn-danger">
+                            Delete Event
+                        </button>
                     )}
                 </div>
             </div>
+            {/* Row for the calendar */}
             <div className="row py-3">
                 <Calendar
                     localizer={localizer}
                     events={allEvents}
                     startAccessor="start"
                     endAccessor="end"
-                    style={{ height: 500}}
+                    style={{ height: 500 }}
                     onSelectEvent={handleSelectEvent}
                 />
             </div>
