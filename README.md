@@ -14,9 +14,7 @@ This project uses a React app template. After downloading our files:
 1. Open a new terminal. If you're using VS Code, you should see a little '+' icon that you can click.
 2. Navigate to the backend: cd backend
 3. Install the backend dependencies: npm install
-4. Uninstall bcrypt: npm uninstall bcrypt
-5. Reinstall bcrypt: npm install bcrypt
-6. Start the backend: npm start
+4. Start the backend: npm start
 
 ## Using the Application
 After completing the steps in the "Getting Started" section, you can access the application in your local web browser!
