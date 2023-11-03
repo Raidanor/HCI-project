@@ -105,7 +105,7 @@ export default function BadgePage() {
     return (
         <div className="container">
             {/* 1st row */}
-            <div className="row">
+            <div className="row py-3">
                 <div className="col-4">
                     {(counter1 > 0) ? <Condition1x1 /> : <ReturnEmpty />}
                 </div>
@@ -119,7 +119,7 @@ export default function BadgePage() {
 
             <br />
             {/* 2nd row */}
-            <div className="row">
+            <div className="row py-3">
                 <div className="col-4">
                     {(counter2 > 0) ? <Condition2x1 /> : <ReturnEmpty />}
                 </div>
@@ -133,7 +133,7 @@ export default function BadgePage() {
             </div>
             <br />
             {/* 3rd row */}
-            <div className="row">
+            <div className="row py-3">
                 <div className="col-4">
                     {(counter3 > 0) ? <Condition3x1 /> : <ReturnEmpty />}
                 </div>

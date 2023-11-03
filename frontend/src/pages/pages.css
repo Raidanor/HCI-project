@@ -22,6 +22,8 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+
+    margin-top: 5%;
 }
 
 label {
@@ -282,5 +284,9 @@ nav .menu-text a:hover {
     padding-bottom: 20px;
 }
 
+.badgebg
+{
+    border: 2px solid #007bff00;
+}
 
 

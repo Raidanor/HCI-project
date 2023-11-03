@@ -42,10 +42,8 @@ export default function Profile() {
 
     return (
         <div className="private">
-            
             <div className='body2'>
             <div className='upc'>
-            <div className='gradiant'></div>
             <div className='profile-down'>
                 <img src={profile_icon} alt="" className="center"/>
                 <div className='profile-title'>
@@ -73,7 +71,7 @@ export default function Profile() {
                 {/* </div> */}
                 {/* </div> */}
             </div>   
-        </div>
+            </div>
         </div>
             
             {/* <h1>Logged in on Profile page</h1> */}
