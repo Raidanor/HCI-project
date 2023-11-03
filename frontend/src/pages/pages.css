@@ -5,19 +5,17 @@
 }
 
 @media screen and (min-width: 600px) {
-    
-.auth-form-container {
-    padding: 5rem;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 0.5rem;
-}
+    .auth-form-container {
+        padding: 5rem;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        margin: 0.5rem;
+    }
 }
 
 body {
     background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
     display: flex; 
-    /* padding-top: 70px; */
     min-height: 100vh;
     align-items: center;
     justify-content: center;
@@ -63,7 +61,6 @@ button {
     background: rgb(243, 238, 238); 
 }
 
-
 .profile-down img{
     height: 200px;
     border-radius: 100px;
@@ -74,20 +71,17 @@ button {
     margin-bottom: 15px;
 }
 
-
 .profile-title{
     font-size: 36px;
     font-weight: 600;
     color: black;
     text-align: center;
-
 }
 
 .profile-description{
     padding: 20px 40px;
     font-size: 16px;
 }
-
 
 .center {
     display: block;
@@ -157,13 +151,11 @@ button {
     width: 100%;
     color: black;
     text-decoration: none;
-    /* border: 1px solid black;  */
 }
 
 .button4:hover {
     background-color: rgb(194, 191, 191);
 }
-
 
 nav {
     width: var(--menu-width);
@@ -175,7 +167,6 @@ nav {
     margin: 0px auto;
     perspective: 2000px;
     flex-wrap: wrap;
-    /* top: 3em; */
 }
 
 nav .menu-item {
@@ -190,7 +181,6 @@ nav .menu-item {
     justify-content: center;
     perspective: 200px;
     letter-spacing: 0.5px;
-    /* min-height: 7.5em; */
 }
 
 nav .menu-text, nav .menu-text a {
@@ -206,10 +196,10 @@ nav .menu-text a:hover {
     color: rgba(255,255,255,0.5);
 }
 
-  .dropdown {
+.dropdown {
     position: relative;
     display: inline-block;
-  }
+}
 
 .dropdown-content {
     display: none;
@@ -218,24 +208,21 @@ nav .menu-text a:hover {
     min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     padding: 1px 1px;
     text-decoration: none;
     display: block;
-  }
+}
 
 .dropdown-content a:hover {
     background-image: linear-gradient(79deg, #9771d8, #e3a8dc 48%, #e7b48f);
 }
 
-.dropdown:hover .dropdown-content 
-{
+.dropdown:hover .dropdown-content {
     display: block;
 }
-
 
 .navbar {
     background-color: rgba(194, 191, 191, 0.2); 
@@ -247,41 +234,54 @@ nav .menu-text a:hover {
     padding: 0;
 }
 
-.badge-container{
+.badge-container {
     margin-bottom: 100px;
     padding-top: 70px;
     padding-left: 100px;
     padding-right: 100px;
-
 }
 
-.badge-text{
+.badge-text {
     padding-top: 30px;
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.badge-container{
-    margin-bottom: 100px;
-    padding-top: 70px;
-    padding-left: 100px;
-    padding-right: 100px;
-
-}
-
-.badge-text{
-    padding-top: 30px;
-    text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.level{
+.level {
     text-align: center;
     padding-bottom: 20px;
 }
 
+.btn {
+    margin: 0 10px;
+    padding: 8px 12px;
+    min-width: 100px;
+    text-align: center;
+}
 
+.btn-primary, .btn-secondary, .btn-danger {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
 
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover {
+    opacity: 0.8;
+}

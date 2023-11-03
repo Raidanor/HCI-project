@@ -195,6 +195,7 @@ return (
                 </div>
             )}
 
+            {/* Row for the calendar */}
             <div className="mt-5">
                 <Calendar
                     localizer={localizer}

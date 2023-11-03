@@ -18,8 +18,12 @@ const eventSchema = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    }
+        ref: "Users",
+    },
+    completed: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 module.exports = mongoose.model('Event', eventSchema);

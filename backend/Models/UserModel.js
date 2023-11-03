@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:[true, "Password is Required!"]
     },
+    
 });
 
 // This is allowing our password to get salt and then be hashed using bcrypt
