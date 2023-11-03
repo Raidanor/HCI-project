@@ -102,10 +102,10 @@ export default function BadgePage() {
 }, [cookies.jwt, nav, removeCookie]);
 
     //COUNTERS FOR CONDIIONS
-    var counter1 = 1, counter2 = 1, counter3 = 1;
+    var counter1 = 1, counter2 = 2, counter3 = 1;
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             {/* 1st row */}
             <div className="row">
                 <div className="col-4">

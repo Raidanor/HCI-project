@@ -41,10 +41,8 @@ export default function Profile() {
     }, [cookies.jwt, nav]);
 
     return (
-        <div className="private">            
-            <div className='body2'>
+            <div className='row justify-content-center'>
                 <div className='upc'>
-                    <div className='gradiant'></div>
                     <div className='profile-down'>
                         <img src={profile_icon} alt="" className="center"/>
                         <div className='block-display'>
@@ -59,6 +57,5 @@ export default function Profile() {
                     </div>   
                 </div>
             </div>            
-        </div>
     );
 }
