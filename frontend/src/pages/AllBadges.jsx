@@ -56,6 +56,26 @@ export default function AllBadges() {
                     <h2 className="level">Level 3</h2>
                     <img src={Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing hover-effect" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one day thirty times.</div>
+        
+        <div className="badge-container">
+            <div className="row">
+                
+                <div className="col-4">
+                <h2 className="level">Level 1</h2>
+                <img src = {Picture1} alt="Badge1" className="grey badge-grey" /> 
+                <div className="badge-text">Recieve this badge once you've completed all your tasks for one day.</div>
+                
+                </div>
+                
+                
+                <div className="col-4">
+                    <h2 className="level">Level 2</h2>
+                    <img src = {Picture1} alt="Badge1" className="badge-colored"/> 
+                    <div className="badge-text">Recieve this badge once you've completed all your tasks for one day seven times.</div>
+                </div>
+                <div className="col-4">
+                    <img src = {Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing" />
+                    <div className="badge-text">Recieve this badge once you've completed all your tasks for one day thirty times.</div>
                 </div>
             </div>
             <br />
