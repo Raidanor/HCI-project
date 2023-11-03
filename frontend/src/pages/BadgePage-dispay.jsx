@@ -123,6 +123,9 @@ export default function BadgePage() {
 
     return (
         <div className="badge-container">
+            <div className="row justify-content-center">
+                This is where the Badges you have unlocked will be displayed
+            </div>
             {/* Text Row */}
             {(counter1 > 0 || counter2 > 0 || counter3 > 0) ? <LevelLine /> : <ReturnEmpty />}
 
