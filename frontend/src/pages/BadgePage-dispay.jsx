@@ -75,32 +75,36 @@ function Condition3x3()
 export default function BadgePage() {
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
+    const logOut = () => {
+        removeCookie("jwt"); 
+        nav("/Login"); 
+    };
  
     useEffect(() => {
-        const logOut = () => {
-            removeCookie("jwt");
-            nav("/login");
-        };
-    
-        const verifyUser = async () => {
-            if (!cookies.jwt) {
-                nav("/Login");
-            } else {
-                try {
-                    const response = await axios.post("http://localhost:3500", {}, {
-                        withCredentials: true,
-                    });
-                    if (!response.data.status) {
-                        logOut();
-                    }
-                } catch (error) {
-                    console.error("Error:", error);
+    const logOut = () => {
+        removeCookie("jwt");
+        nav("/login");
+    };
+
+    const verifyUser = async () => {
+        if (!cookies.jwt) {
+            nav("/Login");
+        } else {
+            try {
+                const response = await axios.post("http://localhost:3500", {}, {
+                    withCredentials: true,
+                });
+                if (!response.data.status) {
+                    logOut();
                 }
+            } catch (error) {
+                console.error("Error:", error);
             }
-        };
-        verifyUser();
-    }, [cookies.jwt, nav, removeCookie]);
-    
+        }
+    };
+    verifyUser();
+}, [cookies.jwt, nav, removeCookie]);
+
     //COUNTERS FOR CONDIIONS
     var counter1 = 1, counter2 = 1, counter3 = 1;
 
