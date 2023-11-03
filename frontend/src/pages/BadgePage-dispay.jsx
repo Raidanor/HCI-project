@@ -71,6 +71,23 @@ function Condition3x3()
         <img src = {Picture3} alt="Badge3" className="rounded-circle border-glowing" />
     )
 }
+
+function LevelLine()
+{
+    return(
+        <div className="row">
+                <div className="col-4">
+                    <h2 className="level">Level 1</h2>
+                </div>
+                <div className="col-4">
+                    <h2 className="level">Level 2</h2>
+                </div>
+                <div className="col-4">
+                    <h2 className="level">Level 3</h2>
+                </div>
+            </div>
+    )
+}
  
 export default function BadgePage() {
     const nav = useNavigate();
@@ -102,10 +119,13 @@ export default function BadgePage() {
 }, [cookies.jwt, nav, removeCookie]);
 
     //COUNTERS FOR CONDIIONS
-    var counter1 = 1, counter2 = 2, counter3 = 1;
+    var counter1 = 0, counter2 = 0, counter3 = 0;
 
     return (
-        <div className="container-fluid">
+        <div className="badge-container">
+            {/* Text Row */}
+            {(counter1 > 0 || counter2 > 0 || counter3 > 0) ? <LevelLine /> : <ReturnEmpty />}
+
             {/* 1st row */}
             <div className="row">
                 <div className="col-4">
