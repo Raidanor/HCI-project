@@ -44,18 +44,23 @@ export const Register = (props) => {
     };
 
     return (
-        <div className="auth-form-container">
-            <h2>Register</h2>
-            <form className="register-form" onSubmit={(e) => handleSubmit(e)}>
-                <label htmlFor="email">Email</label>
-                <input name="email" type="email" placeholder="email" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
-                <label htmlFor="password">Password</label>
-                <input name="password" value={values.password} type="password" placeholder="*******" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
-                <button className="button" type="submit">Register and Login</button>
-                <br/>
-                <Link to="/Login">Already have an account? Login here.</Link>
-            </form>
-
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-6">
+                    <div className="auth-form-container">
+                        <h2>Register</h2>
+                        <form className="register-form" onSubmit={(e) => handleSubmit(e)}>
+                        <label htmlFor="email">Email</label>
+                        <input name="email" type="email" placeholder="email" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
+                        <label htmlFor="password">Password</label>
+                        <input name="password" value={values.password} type="password" placeholder="*******" onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} />
+                        <button className="button" type="submit">Register and Login</button>
+                        <br/>
+                        <Link to="/Login">Already have an account? Login here.</Link>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
