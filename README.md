@@ -9,7 +9,7 @@ This project uses a React app template. After downloading our files:
 2. Install the dependencies (this might take a while due to the size): npm install
 3. Start the frontend: npm start
 
-** Note: You need to start the backend as well to use our application! 
+** Note: You need to start the backend as well to use our application! ** 
 
 1. Open a new terminal. If you're using VS Code, you should see a little '+' icon that you can click.
 2. Navigate to the backend: cd backend
