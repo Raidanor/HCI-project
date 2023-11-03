@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie';
 
 function Navbar() {
   const nav = useNavigate();
-  const [cookies, setCookie, removeCookie] = useCookies(['jwt']) 
+  const [,, removeCookie] = useCookies(['jwt']) 
   // learned we need to speify the cookie we want to look at!
   
   const logOut = (e) => {

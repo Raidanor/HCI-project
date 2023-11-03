@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
  
@@ -75,12 +75,13 @@ function Condition3x3()
 export default function BadgePage() {
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
-    const logOut = () => {
-        removeCookie("jwt"); 
-        nav("/Login"); 
-    };
  
     useEffect(() => {
+        const logOut = () => {
+            removeCookie("jwt");
+            nav("/login");
+        };
+    
         const verifyUser = async () => {
             if (!cookies.jwt) {
                 nav("/Login");
@@ -90,7 +91,7 @@ export default function BadgePage() {
                         withCredentials: true,
                     });
                     if (!response.data.status) {
-                        logOut(); // Call the logOut function to remove the cookie and navigate to the login page
+                        logOut();
                     }
                 } catch (error) {
                     console.error("Error:", error);
@@ -98,7 +99,8 @@ export default function BadgePage() {
             }
         };
         verifyUser();
-    }, [cookies.jwt, nav]);
+    }, [cookies.jwt, nav, removeCookie]);
+    
     //COUNTERS FOR CONDIIONS
     var counter1 = 1, counter2 = 1, counter3 = 1;
 

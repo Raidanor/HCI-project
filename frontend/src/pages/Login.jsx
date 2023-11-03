@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./pages.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import axios from 'axios';
 
 export const Login = (props) =>
@@ -30,7 +30,6 @@ export const Login = (props) =>
             }
         } catch (err) {
             if (err.response) {
-                // AxiosError with response data
                 const { data } = err.response;
                 if (data.errors) {
                     for (const key in data.errors) {
