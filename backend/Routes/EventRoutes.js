@@ -67,6 +67,14 @@ router.patch('/:id/done', authenticateToken, async (req, res) => {
     }
 })
 
+router.get('/', authenticateToken, async (req, res) => {
+    try {
+        const events = await EventModel.find({ user: req.user._id });
+        res.json(events);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 router.delete('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
@@ -89,5 +97,30 @@ router.delete('/:id', authenticateToken, async (req, res) => {
         res.status(500).json({ error: error.message})
     }
 })
+
+
+router.post('/', authenticateToken, async (req, res) => {
+    const { title, start, end } = req.body;
+    
+    if (!title || !start || !end) {
+        return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    try {
+        const newEvent = new EventModel({
+            title: title,
+            start: start,
+            end: end,
+            user: req.user._id
+        });
+
+        await newEvent.save();
+
+        res.status(201).json(newEvent);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 module.exports = router;
