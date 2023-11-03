@@ -20,6 +20,7 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    margin-top: 6%;
 }
 
 label {
@@ -236,7 +237,7 @@ nav .menu-text a:hover {
 
 .badge-container {
     margin-bottom: 100px;
-    padding-top: 70px;
+    /* padding-top: 70px; */
     padding-left: 100px;
     padding-right: 100px;
 }
