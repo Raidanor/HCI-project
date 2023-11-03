@@ -76,16 +76,16 @@ function LevelLine()
 {
     return(
         <div className="row">
-                <div className="col-4">
-                    <h2 className="level">Level 1</h2>
-                </div>
-                <div className="col-4">
-                    <h2 className="level">Level 2</h2>
-                </div>
-                <div className="col-4">
-                    <h2 className="level">Level 3</h2>
-                </div>
+            <div className="col-4">
+                <h2 className="level">Level 1</h2>
             </div>
+            <div className="col-4">
+                <h2 className="level">Level 2</h2>
+            </div>
+            <div className="col-4">
+                <h2 className="level">Level 3</h2>
+            </div>
+        </div>
     )
 }
  
@@ -123,7 +123,7 @@ export default function BadgePage() {
 
     return (
         <div className="badge-container">
-            <div className="row justify-content-center">
+            <div className="row justify-content-center pb-3">
                 This is where the Badges you have unlocked will be displayed
             </div>
             {/* Text Row */}
