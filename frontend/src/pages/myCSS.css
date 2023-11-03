@@ -91,3 +91,8 @@
   justify-content: center;
   text-align: center;
 }
+
+.add-transparent-border
+{
+    border: 2px solid #007bff00;
+}

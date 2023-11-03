@@ -44,47 +44,47 @@ export default function AllBadges() {
             <div className="row">
                 <div className="col-4 text-center">
                     <h2 className="level">Level 1</h2>
-                    <img src={Picture1} alt="Badge1" className="grey badge-grey hover-effect" />
+                    <img src={Picture1} alt="Badge1" className="grey badge-grey hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one day.</div>
                 </div>
                 <div className="col-4 text-center">
                     <h2 className="level">Level 2</h2>
-                    <img src={Picture1} alt="Badge1" className="badge-colored hover-effect" />
+                    <img src={Picture1} alt="Badge1" className="badge-colored hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one day seven times.</div>
                 </div>
                 <div className="col-4 text-center">
                     <h2 className="level">Level 3</h2>
-                    <img src={Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing hover-effect" />
+                    <img src={Picture1} alt="Badge1" className="badge-rounded rounded-circle border-glowing hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one day thirty times.</div>
                 </div>
             </div>
             <br />
             <div className="row">
                 <div className="col-4 text-center">
-                    <img src={Picture2} alt="Badge2" className="grey badge-grey hover-effect" />
+                    <img src={Picture2} alt="Badge2" className="grey badge-grey hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one week.</div>
                 </div>
                 <div className="col-4 text-center">
-                    <img src={Picture2} alt="Badge2" className="badge-colored hover-effect" />
+                    <img src={Picture2} alt="Badge2" className="badge-colored hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one week ten times.</div>
                 </div>
                 <div className="col-4 text-center">
-                    <img src={Picture2} alt="Badge2" className="badge-rounded rounded-circle border-glowing hover-effect" />
+                    <img src={Picture2} alt="Badge2" className="badge-rounded rounded-circle border-glowing hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one week 30 times.</div>
                 </div>
             </div>
             <br />
             <div className="row">
                 <div className="col-4 text-center">
-                    <img src={Picture3} alt="Badge3" className="grey badge-grey hover-effect" />
+                    <img src={Picture3} alt="Badge3" className="grey badge-grey hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one month.</div>
                 </div>
                 <div className="col-4 text-center">
-                    <img src={Picture3} alt="Badge3" className="badge-colored hover-effect" />
+                    <img src={Picture3} alt="Badge3" className="badge-colored hover-effect  add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one month six times.</div>
                 </div>
                 <div className="col-4 text-center">
-                    <img src={Picture3} alt="Badge3" className="badge-rounded rounded-circle border-glowing hover-effect" />
+                    <img src={Picture3} alt="Badge3" className="badge-rounded rounded-circle border-glowing hover-effect add-transparent-border" />
                     <div className="badge-text">Receive this badge once you've completed all your tasks for one month twelve times.</div>
                 </div>
             </div>
