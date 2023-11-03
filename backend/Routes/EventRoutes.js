@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const EventModel = require('../Models/EventModel');
-const UserModel = require('../Models/UserModel'); // Replace with your actual User Model
+const UserModel = require('../Models/UserModel'); 
 const jwt = require('jsonwebtoken');
 
-// Middleware to authenticate and set the user in the request
+
 const authenticateToken = async (req, res, next) => {
 const authHeader = req.headers['authorization'];
 const token = authHeader && authHeader.split(' ')[1];
@@ -16,7 +16,7 @@ jwt.verify(token, "HCI-Project!", async (err, decodedToken) => {
 
     // Now find the user based on the ID or email in the decodedToken
     try {
-      const user = await UserModel.findById(decodedToken.id); // assuming your token has an 'id' field
+        const user = await UserModel.findById(decodedToken.id); 
         if (!user) return res.status(404).json({ error: 'User not found' });
         req.user = user;
         next();
@@ -26,28 +26,7 @@ jwt.verify(token, "HCI-Project!", async (err, decodedToken) => {
 });
 };
 
-// Event creation 
-router.post('/', authenticateToken, async (req, res) => {
-    try {
-        const { title, start, end } = req.body;
-        const event = await EventModel.create({ title, start, end, user: req.user._id });
-        res.status(201).json(event);
-    } catch (error) {
-        res.status(400).json({ error: error.message });
-    }
-});
 
-// Route to get all events for logged-in user
-router.get('/', authenticateToken, async (req, res) => {
-    try {
-        const events = await EventModel.find({ user: req.user._id });
-        res.json(events);
-    } catch (error) {
-        res.status(500).send(error.message);
-    }
-});
-
-// For getting the events so we can edit them
 router.put('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
     const { title, start, end } = req.body;
@@ -69,7 +48,26 @@ router.put('/:id', authenticateToken, async (req, res) => {
     }
 })
 
-// For deleting events!
+// Forgot the semi-colon and had a heartattack in the front end... 
+router.patch('/:id/done', authenticateToken, async (req, res) => {
+    const { id } = req.params;
+    const { isDone } = req.body;
+
+    try {
+        const calendarEvent = await EventModel.findOne({ _id: id, user: req.user._id})
+        if(!calendarEvent){
+            return res.status(400).json({error: 'no Event found'})
+        }
+
+        // Dumb way to do it I think but bes we can do
+        calendarEvent.isDone = isDone;
+        await calendarEvent.save()
+    }catch(error) {
+        res.status(400).json({error: error.message})
+    }
+})
+
+
 router.delete('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
 

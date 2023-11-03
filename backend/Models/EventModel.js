@@ -12,6 +12,9 @@ const eventSchema = new mongoose.Schema({
     end: {
         type: Date,
         required: true
+    },isDone: {
+        type: Boolean,
+        default: false
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

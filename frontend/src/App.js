@@ -7,7 +7,6 @@ import Profile from './pages/Profile';
 import BadgePage from './pages/BadgePage-dispay';
 import AllBadges from './pages/AllBadges';
 import CalendarComponent from "./pages/CalendarComponent";
-import Secret from "./pages/Secert"
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,7 +18,6 @@ function App() {
             <Routes>
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/login" element={<Login />} />
-                <Route exact path="/" element={<Secret />} />
                 <Route exact path="/profile" element={<Profile />} />
                 <Route exact path="/profile/badgepage" element={<BadgePage />} />
                 <Route exact path="/profile/allbadges" element={<AllBadges />} />

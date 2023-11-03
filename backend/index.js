@@ -30,7 +30,5 @@ mongoose.connect("mongodb+srv://hci-access:Mongo1234@hci-project.vrvfgjv.mongodb
 
 app.use(cookieParser());
 app.use(express.json());
-
-app.use("/", authRoutes);
 app.use("/events", eventRoutes);
 app.use("/Profile", authRoutes);
