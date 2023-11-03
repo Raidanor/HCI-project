@@ -82,6 +82,7 @@ function CalendarComponent() {
         });
     };
 
+
     const handleSelectEvent = (event) => {
         setEditMode(true);
         setSelectedEvent(event);
@@ -92,13 +93,17 @@ function CalendarComponent() {
         });
     };
 
+    // Pretty evident what this does, when the form needs to be cleared this function will clear out the data!
     const resetForm = () => {
         setEditMode(false);
         setSelectedEvent(null);
         setNewEvent({ title: "", start: new Date(), end: new Date() });
     };
 
-    // Fetch Events
+    // Fetch Events, using the Bearer's jwt token, it will look for any events
+    // related to the user before populating the calendar.
+    // Using the token allows for the indivivual to see only their own
+    // saved events
     useEffect(() => {
     const fetchEvents = async () => {
         try {
@@ -128,63 +133,70 @@ function CalendarComponent() {
     }
 }, [cookies.jwt, navigate]);
 
+// The edit mode is a state variable, when an already created event is created and clicked on edit mode will be enable
+// This prefilles out the information about the event using backend calles and allows the user to change the information
+// Turns out you need to enclude a PUT request to use, learned that the hard way.
 return (
     <>
-        <div className="container">
-            {/* Row for the heading */}
-            <div className="row py-3">
-                <div className="col">
-                    <h3 className="addtasktext">Add New Event</h3>
+        <div className="container mt-3">
+            <h3 className="mb-3">Manage Your Events</h3>
+            <form onSubmit={handleAddOrUpdateEvent}>
+                <div className="form-row align-items-end">
+                    <div className="form-group col-md-3">
+                        <label htmlFor="eventTitle">Title</label>
+                        <input
+                            id="eventTitle"
+                            type="text"
+                            placeholder="Add Title"
+                            value={newEvent.title}
+                            onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
+                            className="form-control"
+                        />
+                    </div>
+                    
+                    <div className="form-group col-md-3">
+                        <label htmlFor="startDate">Start Date</label>
+                        <DatePicker
+                            id="startDate"
+                            placeholderText="Start Date"
+                            selected={newEvent.start}
+                            onChange={(start) => setNewEvent({ ...newEvent, start })}
+                            className="form-control"
+                        />
+                    </div>
+
+                    <div className="form-group col-md-3">
+                        <label htmlFor="endDate">End Date</label>
+                        <DatePicker
+                            id="endDate"
+                            placeholderText="End Date"
+                            selected={newEvent.end}
+                            onChange={(end) => setNewEvent({ ...newEvent, end })}
+                            className="form-control"
+                        />
+                    </div>
+
+                    <div className="form-group col-md-3">
+                        <button type="submit" className="btn btn-primary"> {editMode ? 'Update Event' : 'Add Event'} </button>
+                        {editMode && (
+                            <button type="button" onClick={resetForm} className="btn btn-secondary ml-2">
+                                Cancel
+                            </button>
+                        )}
+                    </div>
                 </div>
-            </div>
-            {/* Row for the form fields */}
-            <div className="row py-3">
-                <div className="col">
-                    <input
-                        type="text"
-                        placeholder="Add Title"
-                        value={newEvent.title}
-                        onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col">
-                    <DatePicker
-                        placeholderText="Start Date"
-                        selected={newEvent.start}
-                        onChange={(start) => setNewEvent({ ...newEvent, start })}
-                        className="form-control"
-                    />
-                </div>
-                <div className="col">
-                    <DatePicker
-                        placeholderText="End Date"
-                        selected={newEvent.end}
-                        onChange={(end) => setNewEvent({ ...newEvent, end })}
-                        className="form-control"
-                    />
-                </div>
-            </div>
-            {/* Row for buttons */}
-            <div className="row justify-content-center py-3">
-                <div className="button-group">
-                    <button onClick={handleAddOrUpdateEvent} className="btn btn-primary">
-                        {editMode ? 'Update Event' : 'Add Event'}
+            </form>
+
+            {selectedEvent && (
+                <div className="mt-3">
+                    <button onClick={handleDeleteEvent} className="btn btn-danger">
+                        Delete Event
                     </button>
-                    {editMode && (
-                        <button onClick={resetForm} className="btn btn-secondary">
-                            Cancel
-                        </button>
-                    )}
-                    {selectedEvent && (
-                        <button onClick={handleDeleteEvent} className="btn btn-danger">
-                            Delete Event
-                        </button>
-                    )}
                 </div>
-            </div>
+            )}
+
             {/* Row for the calendar */}
-            <div className="row py-3">
+            <div className="mt-5">
                 <Calendar
                     localizer={localizer}
                     events={allEvents}

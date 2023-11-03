@@ -100,7 +100,7 @@ export default function BadgePage() {
         verifyUser();
     }, [cookies.jwt, nav]);
     //COUNTERS FOR CONDIIONS
-    var counter1 = 3, counter2 = 3, counter3 = 3;
+    var counter1 = 1, counter2 = 1, counter3 = 1;
 
     return (
         <div className="container">
