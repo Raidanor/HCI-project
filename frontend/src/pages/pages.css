@@ -239,7 +239,7 @@ nav .menu-text a:hover {
 
 .navbar {
     background-color: rgba(194, 191, 191, 0.2); 
-    /* position: fixed; */
+    position: fixed; /* Please don't delete this line again, it keeps the navbar on top! */
     top: 0;
     left: 0;
     width: 100%;
@@ -262,7 +262,25 @@ nav .menu-text a:hover {
     padding-right: 50px;
 }
 
+.badge-container{
+    margin-bottom: 100px;
+    padding-top: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+.badge-text{
+    padding-top: 30px;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .level{
     text-align: center;
     padding-bottom: 20px;
 }
+
+
+

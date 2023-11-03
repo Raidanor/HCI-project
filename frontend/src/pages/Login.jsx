@@ -26,7 +26,7 @@ export const Login = (props) =>
 
             // Check if the request was successful
             if (data.created) {
-                navigate("/")
+                navigate("/Profile")
             }
         } catch (err) {
             if (err.response) {

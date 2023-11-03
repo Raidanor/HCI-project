@@ -1,7 +1,20 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./pages.css";
+import { useCookies } from 'react-cookie';
+
 
 function Navbar() {
+  const nav = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(['jwt']) 
+  // learned we need to speify the cookie we want to look at!
+  
+  const logOut = (e) => {
+    e.preventDefault();
+    removeCookie("jwt");
+    nav("/login");
+  }
+
   return (
     <div className="navbar container-fluid">
       <nav id="menu">
@@ -39,7 +52,7 @@ function Navbar() {
 
         <div className="menu-item">
           <div className="menu-text">
-            <Link to="/">Logout</Link>
+          <a href="/logout" onClick={logOut}>Logout</a>
           </div>
         </div>
 
