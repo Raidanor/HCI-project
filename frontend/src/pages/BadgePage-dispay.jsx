@@ -75,11 +75,7 @@ function Condition3x3()
 export default function BadgePage() {
     const nav = useNavigate();
     const [cookies, removeCookie] = useCookies([]); 
-    const logOut = () => {
-        removeCookie("jwt"); 
-        nav("/Login"); 
-    };
- 
+    
     useEffect(() => {
     const logOut = () => {
         removeCookie("jwt");
